@@ -512,9 +512,40 @@ nav {
 <div id="progress-label"></div>
 
 <!-- ══════════════════════════════════════════════════════
-     SCREEN 1: INTRO
+     SCREEN 1: GATE (email capture — shown first)
 ══════════════════════════════════════════════════════ -->
-<div class="screen active" id="screen-intro">
+<div class="screen active" id="screen-gate">
+  <div class="wrap">
+    <span class="gate-eyebrow">Diagnostic Assessment &middot; House of Mastery &middot; April 11, 2026</span>
+    <h1 class="gate-h2">The <em style="font-style:italic;color:var(--gold);">Unfinished</em><br>Life Diagnostic</h1>
+    <p class="gate-body">
+      This is not a personality quiz. It is a mirror.<br>
+      <strong>18 statements. 6 minutes. Your results will be sent to this address.</strong>
+    </p>
+    <div class="gate-form">
+      <div class="gate-field">
+        <label class="gate-label" for="gate-name">Full Name</label>
+        <input class="gate-input" type="text" id="gate-name" placeholder="Your full name" autocomplete="name"/>
+        <span class="gate-error" id="err-name">Please enter your name</span>
+      </div>
+      <div class="gate-field">
+        <label class="gate-label" for="gate-email">Email Address</label>
+        <input class="gate-input" type="email" id="gate-email" placeholder="your@email.com" autocomplete="email"/>
+        <span class="gate-error" id="err-email">Please enter a valid email address</span>
+      </div>
+    </div>
+    <button class="btn-reveal" onclick="unlockAssessment()">
+      Begin the diagnostic
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="gate-privacy" style="margin-top:16px;">Your information is private. We do not share or sell it. Ever.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCREEN 2: INTRO
+══════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-intro">
   <div class="wrap">
     <span class="intro-eyebrow">Diagnostic Assessment &middot; House of Mastery &middot; April 11, 2026</span>
     <h1 class="intro-h1">The <em>Unfinished</em><br>Life Diagnostic</h1>
@@ -559,7 +590,7 @@ nav {
     </div>
 
     <button class="btn-start" onclick="startAssessment()">
-      Begin the diagnostic
+      Start the assessment
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
   </div>
@@ -589,41 +620,59 @@ nav {
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SCREEN 3: EMAIL GATE
+     SCREEN 3: QUESTIONS (unchanged)
 ══════════════════════════════════════════════════════ -->
-<div class="screen" id="screen-gate">
-  <div class="wrap">
-    <span class="gate-eyebrow">Your pattern has been identified</span>
-    <h2 class="gate-h2">Enter your details to<br>see your result</h2>
-    <p class="gate-body">
-      Your diagnostic result includes your archetype, the specific lie it tells you,
-      the pattern it has created in your life, and the question that can interrupt it.
-      <strong>We will also email you the full breakdown</strong> so you can return to it.
+
+<!-- ══════════════════════════════════════════════════════
+     SCREEN 4: CONFIRMATION (cliffhanger — no result shown)
+══════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-confirm">
+  <div class="wrap" style="text-align:center;padding-top:40px;">
+    <div style="width:64px;height:64px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin:0 auto 32px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" style="color:var(--gold)"/></svg>
+    </div>
+    <span class="gate-eyebrow">Diagnostic Complete</span>
+    <h2 class="gate-h2" style="margin-bottom:16px;">Your results are<br>waiting in your inbox.</h2>
+    <p class="gate-body" style="max-width:420px;margin:0 auto 16px;">
+      We have calculated your pattern and the exact cost of your unfinished cycles.
     </p>
-    <div class="gate-form">
-      <div class="gate-field">
-        <label class="gate-label" for="gate-name">Full Name</label>
-        <input class="gate-input" type="text" id="gate-name" placeholder="Your full name" autocomplete="name"/>
-        <span class="gate-error" id="err-name">Please enter your name</span>
-      </div>
-      <div class="gate-field">
-        <label class="gate-label" for="gate-email">Email Address</label>
-        <input class="gate-input" type="email" id="gate-email" placeholder="your@email.com" autocomplete="email"/>
-        <span class="gate-error" id="err-email">Please enter a valid email address</span>
+    <p class="gate-body" style="max-width:420px;margin:0 auto 32px;font-weight:600;color:var(--text);">
+      Go check your email now. Inside, you will find your archetype, your full pattern profile, and your private invitation to the summit.
+    </p>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--text-dim);margin-bottom:48px;">Check your spam folder if you don&rsquo;t see it within two minutes.</p>
+
+    <!-- Share -->
+    <div class="share-section" style="text-align:left;">
+      <h3 class="share-heading">Know someone living an unfinished life?</h3>
+      <p class="share-sub">
+        Most people who need this diagnostic will never take it unless someone sends it to them.
+        If this was useful, share it. You might be the reason someone finally interrupts their pattern.
+      </p>
+      <div class="share-buttons">
+        <a class="share-btn whatsapp" id="share-whatsapp" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-btn facebook" id="share-facebook" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X (Twitter)
+        </a>
+        <a class="share-btn instagram" id="share-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
       </div>
     </div>
-    <button class="btn-reveal" onclick="revealResult()">
-      Reveal my pattern
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <p class="gate-privacy" style="margin-top:16px;">
-      Your information is private. We do not share or sell it. Ever.
-    </p>
+    <button class="btn-restart" onclick="restartAssessment()">Take the assessment again</button>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SCREEN 4: RESULT
+     SCREEN 5: RESULT (email link target — kept for future use)
 ══════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-result">
   <div class="wrap">
@@ -898,6 +947,48 @@ function updateProgressBar(step, total) {
 }
 
 // ══════════════════════════════════════════════════════════════
+// GATE → UNLOCK (new first step)
+// ══════════════════════════════════════════════════════════════
+function unlockAssessment() {
+  const nameEl  = document.getElementById('gate-name');
+  const emailEl = document.getElementById('gate-email');
+  const errName  = document.getElementById('err-name');
+  const errEmail = document.getElementById('err-email');
+
+  let valid = true;
+
+  if (!nameEl.value.trim()) {
+    nameEl.classList.add('error');
+    errName.classList.add('show');
+    valid = false;
+  } else {
+    nameEl.classList.remove('error');
+    errName.classList.remove('show');
+  }
+
+  const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRx.test(emailEl.value.trim())) {
+    emailEl.classList.add('error');
+    errEmail.classList.add('show');
+    valid = false;
+  } else {
+    emailEl.classList.remove('error');
+    errEmail.classList.remove('show');
+  }
+
+  if (!valid) return;
+
+  userName  = nameEl.value.trim();
+  userEmail = emailEl.value.trim();
+
+  // Submit to Google Form immediately on gate entry
+  submitToGoogleFormPartial();
+
+  // Move to intro screen
+  showScreen('screen-intro');
+}
+
+// ══════════════════════════════════════════════════════════════
 // INTRO → START
 // ══════════════════════════════════════════════════════════════
 function startAssessment() {
@@ -984,10 +1075,23 @@ function nextQuestion() {
     currentQ++;
     renderQuestion();
   } else {
-    // All done — go to gate
+    // All done — compute result, send email, show confirmation
     computedResult = computeResult();
-    showScreen('screen-gate');
-    updateProgressBar(QUESTIONS.length, QUESTIONS.length);
+    document.getElementById('sending-overlay').classList.add('show');
+    Promise.allSettled([
+      submitToGoogleFormFull(),
+      sendEmailJS()
+    ]).then(() => {
+      document.getElementById('sending-overlay').classList.remove('show');
+      // Set share links before showing confirm screen
+      const shareText = encodeURIComponent('I just took the Unfinished Life Diagnostic by House of Mastery. It was uncomfortably accurate. Take it here:');
+      const shareUrl  = encodeURIComponent(ASSESSMENT_URL);
+      document.getElementById('share-whatsapp').href  = 'https://wa.me/?text=' + shareText + '%20' + shareUrl;
+      document.getElementById('share-facebook').href  = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+      document.getElementById('share-twitter').href   = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + shareUrl;
+      showScreen('screen-confirm');
+      updateProgressBar(QUESTIONS.length, QUESTIONS.length);
+    });
   }
 }
 
@@ -1025,59 +1129,34 @@ function computeResult() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// GATE → REVEAL
+// LEGACY REVEAL (kept for compatibility — not used in new flow)
 // ══════════════════════════════════════════════════════════════
 function revealResult() {
-  const nameEl  = document.getElementById('gate-name');
-  const emailEl = document.getElementById('gate-email');
-  const errName  = document.getElementById('err-name');
-  const errEmail = document.getElementById('err-email');
-
-  let valid = true;
-
-  if (!nameEl.value.trim()) {
-    nameEl.classList.add('error');
-    errName.classList.add('show');
-    valid = false;
-  } else {
-    nameEl.classList.remove('error');
-    errName.classList.remove('show');
-  }
-
-  const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRx.test(emailEl.value.trim())) {
-    emailEl.classList.add('error');
-    errEmail.classList.add('show');
-    valid = false;
-  } else {
-    emailEl.classList.remove('error');
-    errEmail.classList.remove('show');
-  }
-
-  if (!valid) return;
-
-  userName  = nameEl.value.trim();
-  userEmail = emailEl.value.trim();
-
-  // Show sending overlay
-  document.getElementById('sending-overlay').classList.add('show');
-
-  // Fire both async tasks
-  Promise.allSettled([
-    submitToGoogleForm(),
-    sendEmailJS()
-  ]).then(() => {
-    document.getElementById('sending-overlay').classList.remove('show');
-    renderResult();
-    showScreen('screen-result');
-    updateProgressBar(0, 0);
-  });
+  // This function is no longer called in the new gated flow
+  // but is kept to avoid JS errors if referenced elsewhere
 }
 
 // ══════════════════════════════════════════════════════════════
-// GOOGLE FORM SUBMISSION (no-cors silent)
+// GOOGLE FORM SUBMISSION
 // ══════════════════════════════════════════════════════════════
-function submitToGoogleForm() {
+
+// Step 1: Submit name + email immediately when gate is passed
+function submitToGoogleFormPartial() {
+  const body = new URLSearchParams();
+  body.append(FORM_ENTRY_NAME,  userName);
+  body.append(FORM_ENTRY_EMAIL, userEmail);
+  body.append(FORM_ENTRY_ARCHETYPE, 'Diagnostic started — result pending');
+
+  fetch(GOOGLE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  }).catch(() => {});
+}
+
+// Step 2: Submit full result after assessment is complete
+function submitToGoogleFormFull() {
   const archetype = ARCHETYPES[computedResult.primaryCell];
   const body = new URLSearchParams();
   body.append(FORM_ENTRY_NAME,      userName);
@@ -1089,7 +1168,7 @@ function submitToGoogleForm() {
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: body.toString()
-  }).catch(() => {}); // Silently ignore CORS errors — submission still goes through
+  }).catch(() => {});
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -1272,7 +1351,7 @@ function restartAssessment() {
   userEmail = '';
   document.getElementById('gate-name').value  = '';
   document.getElementById('gate-email').value = '';
-  showScreen('screen-intro');
+  showScreen('screen-gate');
   updateProgressBar(0, 0);
 }
 
