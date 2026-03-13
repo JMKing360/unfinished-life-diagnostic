@@ -102,6 +102,7 @@ nav {
   color: var(--text); margin-bottom: 8px;
 }
 .intro-h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+.brand-em { font-family: var(--display); font-style: italic; font-weight: 400; color: var(--gold); }
 .intro-sub {
   font-family: var(--sans); font-size: 13px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
@@ -236,6 +237,7 @@ nav {
   font-family: var(--display); font-size: clamp(26px, 4.5vw, 40px);
   font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 16px;
 }
+.gate-h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
 .gate-body {
   font-family: var(--sans); font-size: 16px; font-weight: 400;
   line-height: 1.80; color: var(--text-mid); margin-bottom: 40px;
@@ -517,7 +519,7 @@ nav {
 <div class="screen active" id="screen-gate">
   <div class="wrap">
     <span class="gate-eyebrow">Diagnostic Assessment &middot; House of Mastery</span>
-    <h1 class="gate-h2">The <em style="font-style:italic;color:var(--gold);">Unfinished</em><br>Life Diagnostic</h1>
+    <h1 class="gate-h2">The <em class="brand-em">Unfinished</em><br>Life Diagnostic</h1>
     <p class="gate-body">
       This is not a personality quiz. It is a mirror.<br>
       <strong>18 statements. 6 minutes. Your results will be sent to this address.</strong>
@@ -548,7 +550,7 @@ nav {
 <div class="screen" id="screen-intro">
   <div class="wrap">
     <span class="intro-eyebrow">Diagnostic Assessment &middot; House of Mastery &middot; April 11, 2026</span>
-    <h1 class="intro-h1">The <em>Unfinished</em><br>Life Diagnostic</h1>
+    <h1 class="intro-h1">The <em class="brand-em">Unfinished</em><br>Life Diagnostic</h1>
     <span class="intro-sub">By Dr. Job Mogire, MD, FACP, FACC</span>
 
     <p class="intro-body">
@@ -676,7 +678,7 @@ nav {
 ══════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-result">
   <div class="wrap">
-    <span class="result-eyebrow" id="r-eyebrow">Your Pattern &middot; The Unfinished Life Diagnostic</span>
+    <span class="result-eyebrow" id="r-eyebrow">Your Pattern &middot; The <em class="brand-em" style="font-size:inherit;">Unfinished</em> Life Diagnostic</span>
     <h1 class="result-archetype-name" id="r-name"></h1>
     <span class="result-mask-tag" id="r-mask-tag"></span>
 
