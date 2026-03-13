@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Unfinished Life Diagnostic — House of Mastery</title>
+<meta name="description" content="18 statements. 6 minutes. Discover the exact pattern keeping your life unfinished. A diagnostic by Dr. Job Mogire."/>
+<meta property="og:title" content="The Unfinished Life Diagnostic"/>
+<meta property="og:description" content="Discover the exact pattern keeping your life unfinished. Free diagnostic by House of Mastery."/>
+<meta property="og:url" content="https://houseofmastery.co/diagnostic"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:          #07111f;
+  --bg-alt:      #0b1c30;
+  --surface:     rgba(255,255,255,0.04);
+  --border:      rgba(255,255,255,0.08);
+  --text:        #f0ebe2;
+  --text-mid:    rgba(240,235,226,0.75);
+  --text-dim:    rgba(240,235,226,0.45);
+  --gold:        #c8a45a;
+  --gold-soft:   rgba(200,164,90,0.10);
+  --gold-border: rgba(200,164,90,0.22);
+  --navy:        #0d2240;
+  --ivory:       #f5f0e8;
+  --ivory-warm:  #ede8df;
+  --text-navy:   #0d2240;
+  --display:     'Lora', Georgia, serif;
+  --sans:        'Inter', system-ui, sans-serif;
+  --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Traffic light */
+  --red:         #c0392b;
+  --red-soft:    rgba(192,57,43,0.12);
+  --red-border:  rgba(192,57,43,0.35);
+  --amber:       #d4850a;
+  --amber-soft:  rgba(212,133,10,0.12);
+  --amber-border:rgba(212,133,10,0.35);
+  --green:       #1e7e4a;
+  --green-soft:  rgba(30,126,74,0.12);
+  --green-border:rgba(30,126,74,0.35);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(7,17,31,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.70); }
+.nav-back { font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+.nav-back:hover { opacity: 0.75; }
+
+/* ── PROGRESS BAR ── */
+#progress-bar-wrap {
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+  height: 3px; background: var(--border);
+}
+#progress-bar-fill {
+  height: 100%; background: var(--gold);
+  transition: width 0.5s var(--ease);
+  width: 0%;
+}
+#progress-label {
+  position: fixed; top: 63px; right: 20px; z-index: 99;
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  color: var(--text-dim); letter-spacing: 0.12em;
+  transition: opacity 0.3s;
+}
+
+/* ── WRAP ── */
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+.screen { min-height: 100vh; padding-top: 100px; padding-bottom: 80px; display: none; }
+.screen.active { display: block; }
+
+/* ── INTRO SCREEN ── */
+.intro-eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 32px; display: block;
+}
+.intro-h1 {
+  font-family: var(--display); font-size: clamp(36px, 7vw, 64px);
+  font-weight: 700; line-height: 1.06; letter-spacing: -0.02em;
+  color: var(--text); margin-bottom: 8px;
+}
+.intro-h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+.intro-sub {
+  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 48px; display: block;
+}
+.intro-body {
+  font-family: var(--sans); font-size: 17px; font-weight: 400;
+  line-height: 1.85; color: var(--text-mid); margin-bottom: 20px;
+}
+.intro-body strong { color: var(--text); font-weight: 600; }
+.intro-divider { height: 1px; background: var(--border); margin: 40px 0; }
+.intro-meta {
+  display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 48px;
+}
+.intro-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.intro-meta-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); }
+.intro-meta-value { font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--text); }
+.intro-warning {
+  background: var(--gold-soft); border: 1px solid var(--gold-border);
+  border-radius: 12px; padding: 20px 24px;
+  font-family: var(--sans); font-size: 14px; font-weight: 500;
+  color: var(--text-mid); line-height: 1.70; margin-bottom: 48px;
+}
+.intro-warning strong { color: var(--gold); font-weight: 700; }
+.btn-start {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--gold); color: var(--bg);
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  padding: 18px 52px; border-radius: 100px; border: none; cursor: pointer;
+  transition: all 0.3s var(--ease); letter-spacing: 0.03em;
+}
+.btn-start:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(200,164,90,0.28); }
+.btn-start svg { transition: transform 0.3s var(--ease); }
+.btn-start:hover svg { transform: translateX(4px); }
+
+/* ── QUESTION SCREEN ── */
+.q-counter {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);
+  margin-bottom: 16px; display: block;
+}
+.q-mask-label {
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 100px; display: inline-block;
+  margin-bottom: 32px;
+}
+.q-mask-fear    { background: rgba(155,64,48,0.15); color: #e07060; border: 1px solid rgba(155,64,48,0.30); }
+.q-mask-drift   { background: rgba(42,74,122,0.20); color: #7aA0d8; border: 1px solid rgba(42,74,122,0.40); }
+.q-mask-performance { background: rgba(138,96,32,0.20); color: #d4a84a; border: 1px solid rgba(138,96,32,0.40); }
+
+.q-text {
+  font-family: var(--display); font-size: clamp(20px, 3.5vw, 28px);
+  font-weight: 600; line-height: 1.40; color: var(--text);
+  margin-bottom: 12px;
+}
+.q-sub {
+  font-family: var(--sans); font-size: 14px; font-weight: 400;
+  font-style: italic; color: var(--text-dim); margin-bottom: 40px;
+  line-height: 1.60;
+}
+
+/* Scale options */
+.scale-wrap { display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; }
+.scale-option {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface);
+  cursor: pointer; transition: all 0.22s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.scale-option:hover { border-color: rgba(200,164,90,0.35); background: var(--gold-soft); }
+.scale-option.selected {
+  border-color: var(--gold); background: var(--gold-soft);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+.scale-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--border); flex-shrink: 0;
+  transition: all 0.22s var(--ease);
+  display: flex; align-items: center; justify-content: center;
+}
+.scale-option.selected .scale-dot {
+  border-color: var(--gold); background: var(--gold);
+}
+.scale-option.selected .scale-dot::after {
+  content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--bg);
+}
+.scale-num {
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  color: var(--text-dim); width: 20px; flex-shrink: 0;
+  transition: color 0.22s;
+}
+.scale-option.selected .scale-num { color: var(--gold); }
+.scale-label {
+  font-family: var(--sans); font-size: 14px; font-weight: 500;
+  color: var(--text-mid); line-height: 1.40; transition: color 0.22s;
+}
+.scale-option.selected .scale-label { color: var(--text); }
+
+/* Nav buttons */
+.nav-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.btn-prev {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-dim); font-family: var(--sans); font-size: 13px;
+  font-weight: 600; padding: 14px 24px; border-radius: 100px; cursor: pointer;
+  transition: all 0.22s var(--ease); letter-spacing: 0.02em;
+}
+.btn-prev:hover:not(:disabled) { border-color: rgba(255,255,255,0.20); color: var(--text); }
+.btn-prev:disabled { opacity: 0.30; cursor: default; }
+.btn-next {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: var(--bg);
+  font-family: var(--sans); font-size: 14px; font-weight: 700;
+  padding: 14px 32px; border-radius: 100px; border: none; cursor: pointer;
+  transition: all 0.3s var(--ease); letter-spacing: 0.03em; opacity: 0.35;
+  pointer-events: none;
+}
+.btn-next.enabled { opacity: 1; pointer-events: auto; }
+.btn-next.enabled:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,164,90,0.25); }
+.btn-next svg { transition: transform 0.3s var(--ease); }
+.btn-next.enabled:hover svg { transform: translateX(3px); }
+
+/* ── GATE SCREEN ── */
+.gate-eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 24px; display: block;
+}
+.gate-h2 {
+  font-family: var(--display); font-size: clamp(26px, 4.5vw, 40px);
+  font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 16px;
+}
+.gate-body {
+  font-family: var(--sans); font-size: 16px; font-weight: 400;
+  line-height: 1.80; color: var(--text-mid); margin-bottom: 40px;
+}
+.gate-body strong { color: var(--text); font-weight: 600; }
+.gate-form { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.gate-field { display: flex; flex-direction: column; gap: 8px; }
+.gate-label {
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-dim);
+}
+.gate-input {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 18px;
+  font-family: var(--sans); font-size: 15px; font-weight: 500;
+  color: var(--text); outline: none; transition: border-color 0.22s;
+  width: 100%;
+}
+.gate-input:focus { border-color: var(--gold); }
+.gate-input::placeholder { color: var(--text-dim); }
+.gate-input.error { border-color: var(--red); }
+.gate-error { font-family: var(--sans); font-size: 12px; color: #e07060; font-weight: 500; display: none; }
+.gate-error.show { display: block; }
+.btn-reveal {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--gold); color: var(--bg);
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  padding: 18px 40px; border-radius: 100px; border: none; cursor: pointer;
+  transition: all 0.3s var(--ease); letter-spacing: 0.03em; width: 100%;
+}
+.btn-reveal:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(200,164,90,0.28); }
+.gate-privacy {
+  font-family: var(--sans); font-size: 12px; color: var(--text-dim);
+  text-align: center; line-height: 1.60;
+}
+
+/* ── RESULT SCREEN ── */
+.result-eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 24px; display: block;
+}
+.result-archetype-name {
+  font-family: var(--display); font-size: clamp(32px, 6vw, 56px);
+  font-weight: 700; line-height: 1.06; letter-spacing: -0.02em;
+  color: var(--text); margin-bottom: 8px;
+}
+.result-mask-tag {
+  display: inline-block; font-family: var(--sans); font-size: 12px;
+  font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 40px;
+}
+.result-card {
+  border-radius: 16px; padding: 32px; margin-bottom: 40px;
+  border: 1px solid;
+}
+.result-lie {
+  font-family: var(--display); font-size: 18px; font-style: italic;
+  font-weight: 400; margin-bottom: 20px; line-height: 1.40;
+}
+.result-desc {
+  font-family: var(--sans); font-size: 16px; font-weight: 400;
+  line-height: 1.85; color: var(--text-mid); margin-bottom: 24px;
+}
+.result-pattern-label {
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);
+  display: block; margin-bottom: 8px;
+}
+.result-pattern {
+  font-family: var(--sans); font-size: 15px; font-weight: 600;
+  color: var(--text); line-height: 1.70; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.result-question-wrap {
+  background: var(--gold-soft); border: 1px solid var(--gold-border);
+  border-radius: 12px; padding: 24px; margin-top: 20px;
+}
+.result-q-label {
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: 10px;
+}
+.result-question {
+  font-family: var(--display); font-size: 18px; font-style: italic;
+  font-weight: 400; color: var(--text); line-height: 1.55;
+}
+
+/* ── TRAFFIC LIGHT MATRIX ── */
+.tl-section { margin-bottom: 48px; }
+.tl-heading {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);
+  margin-bottom: 20px; display: block;
+}
+.tl-grid { display: flex; flex-direction: column; gap: 10px; }
+.tl-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px; border-radius: 10px; border: 1px solid;
+}
+.tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.tl-label { font-family: var(--sans); font-size: 14px; font-weight: 600; flex: 1; }
+.tl-score { font-family: var(--sans); font-size: 13px; font-weight: 700; }
+.tl-bar-wrap { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); overflow: hidden; }
+.tl-bar-fill { height: 100%; border-radius: 2px; transition: width 1.2s var(--ease); }
+
+.tl-red    { background: var(--red-soft);   border-color: var(--red-border);   }
+.tl-amber  { background: var(--amber-soft);  border-color: var(--amber-border); }
+.tl-green  { background: var(--green-soft);  border-color: var(--green-border); }
+.tl-dot-red   { background: var(--red);   }
+.tl-dot-amber { background: var(--amber); }
+.tl-dot-green { background: var(--green); }
+.tl-label-red   { color: #e07060; }
+.tl-label-amber { color: #d4a84a; }
+.tl-label-green { color: #4caf7d; }
+.tl-score-red   { color: #e07060; }
+.tl-score-amber { color: #d4a84a; }
+.tl-score-green { color: #4caf7d; }
+.tl-fill-red   { background: var(--red);   }
+.tl-fill-amber { background: var(--amber); }
+.tl-fill-green { background: var(--green); }
+
+/* ── SECONDARY ARCHETYPE ── */
+.secondary-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; margin-bottom: 40px;
+}
+.secondary-label {
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);
+  display: block; margin-bottom: 8px;
+}
+.secondary-name {
+  font-family: var(--display); font-size: 20px; font-weight: 600;
+  color: var(--text); margin-bottom: 8px;
+}
+.secondary-desc {
+  font-family: var(--sans); font-size: 14px; font-weight: 400;
+  color: var(--text-mid); line-height: 1.70;
+}
+
+/* ── CTA BLOCK ── */
+.cta-block {
+  background: var(--ivory-warm); border-radius: 20px;
+  padding: 48px 40px; text-align: center; margin-bottom: 40px;
+}
+.cta-eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy);
+  opacity: 0.55; margin-bottom: 20px; display: block;
+}
+.cta-h2 {
+  font-family: var(--display); font-size: clamp(22px, 4vw, 34px);
+  font-weight: 700; line-height: 1.20; color: var(--navy);
+  margin-bottom: 16px;
+}
+.cta-body {
+  font-family: var(--sans); font-size: 15px; font-weight: 500;
+  color: #3a3a3a; line-height: 1.80; margin-bottom: 32px;
+  max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.cta-body strong { color: var(--navy); font-weight: 700; }
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--navy); color: #fff;
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  padding: 18px 52px; border-radius: 100px; border: none; cursor: pointer;
+  transition: all 0.3s var(--ease); letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.btn-cta:hover { background: #1a3355; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(13,34,64,0.28); }
+.cta-meta {
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  color: #555; margin-top: 20px;
+}
+.cta-urgency {
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  color: var(--red); letter-spacing: 0.06em; text-transform: uppercase;
+  margin-top: 8px; display: block;
+}
+
+/* ── SHARE SECTION ── */
+.share-section { margin-bottom: 64px; }
+.share-heading {
+  font-family: var(--display); font-size: 20px; font-weight: 600;
+  color: var(--text); margin-bottom: 8px; line-height: 1.40;
+}
+.share-sub {
+  font-family: var(--sans); font-size: 14px; font-weight: 400;
+  color: var(--text-mid); line-height: 1.70; margin-bottom: 24px;
+}
+.share-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 100px; border: 1px solid var(--border);
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.22s var(--ease); text-decoration: none;
+  background: var(--surface); color: var(--text-mid);
+}
+.share-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); background: rgba(255,255,255,0.06); }
+.share-btn.whatsapp:hover { border-color: #25d366; color: #25d366; }
+.share-btn.instagram:hover { border-color: #e1306c; color: #e1306c; }
+.share-btn.facebook:hover { border-color: #1877f2; color: #1877f2; }
+.share-btn.twitter:hover { border-color: #fff; color: #fff; }
+
+/* ── RESTART ── */
+.btn-restart {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-dim); font-family: var(--sans); font-size: 12px;
+  font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
+  padding: 12px 24px; border-radius: 100px; cursor: pointer;
+  transition: all 0.22s; margin-bottom: 80px;
+}
+.btn-restart:hover { border-color: rgba(255,255,255,0.20); color: var(--text); }
+
+/* ── SENDING STATE ── */
+.sending-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(7,17,31,0.90); backdrop-filter: blur(24px);
+  z-index: 500; align-items: center; justify-content: center;
+  flex-direction: column; gap: 24px;
+}
+.sending-overlay.show { display: flex; }
+.sending-spinner {
+  width: 48px; height: 48px; border: 3px solid var(--border);
+  border-top-color: var(--gold); border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.sending-text {
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  color: var(--text-mid); letter-spacing: 0.06em;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s var(--ease) forwards; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 560px) {
+  .intro-meta { gap: 20px; }
+  .cta-block { padding: 36px 24px; }
+  .share-buttons { gap: 8px; }
+  .share-btn { font-size: 12px; padding: 10px 16px; }
+  .nav-row { flex-direction: column-reverse; }
+  .btn-prev, .btn-next { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- SENDING OVERLAY -->
+<div class="sending-overlay" id="sending-overlay">
+  <div class="sending-spinner"></div>
+  <div class="sending-text">Calculating your pattern&hellip;</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">House of Mastery</span>
+  <a href="https://houseofmastery.co" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M8.5 2.5L4 7l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Summit
+  </a>
+</nav>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar-wrap">
+  <div id="progress-bar-fill"></div>
+</div>
+<div id="progress-label"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCREEN 1: INTRO
+══════════════════════════════════════════════════════ -->
+<div class="screen active" id="screen-intro">
+  <div class="wrap">
+    <span class="intro-eyebrow">Diagnostic Assessment &middot; House of Mastery &middot; April 11, 2026</span>
+    <h1 class="intro-h1">The <em>Unfinished</em><br>Life Diagnostic</h1>
+    <span class="intro-sub">By Dr. Job Mogire, MD, FACP, FACC</span>
+
+    <p class="intro-body">
+      Every unfinished life follows a pattern. The pattern is not random &mdash; and it is not laziness.
+      It lives at the intersection of <strong>where</strong> your life is incomplete and the
+      <strong>story you tell yourself</strong> to stay there.
+    </p>
+    <p class="intro-body">
+      This diagnostic identifies which of nine specific patterns is operating in your life right now.
+      It does not flatter. It does not comfort. It tells you the truth &mdash; because the truth
+      is the only thing that can interrupt the pattern.
+    </p>
+
+    <div class="intro-divider"></div>
+
+    <div class="intro-meta">
+      <div class="intro-meta-item">
+        <span class="intro-meta-label">Statements</span>
+        <span class="intro-meta-value">18</span>
+      </div>
+      <div class="intro-meta-item">
+        <span class="intro-meta-label">Time</span>
+        <span class="intro-meta-value">6&ndash;8 min</span>
+      </div>
+      <div class="intro-meta-item">
+        <span class="intro-meta-label">Results</span>
+        <span class="intro-meta-value">Immediate</span>
+      </div>
+      <div class="intro-meta-item">
+        <span class="intro-meta-label">Archetypes</span>
+        <span class="intro-meta-value">9 possible</span>
+      </div>
+    </div>
+
+    <div class="intro-warning">
+      <strong>One instruction:</strong> Answer how you actually are &mdash; not how you wish you were,
+      not how you present yourself to others. The assessment is only useful if it is honest.
+      No one sees your answers except you.
+    </div>
+
+    <button class="btn-start" onclick="startAssessment()">
+      Begin the diagnostic
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCREEN 2: QUESTIONS
+══════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-question">
+  <div class="wrap">
+    <span class="q-counter" id="q-counter">Statement 1 of 18</span>
+    <span class="q-mask-label" id="q-mask-label"></span>
+    <div class="q-text" id="q-text"></div>
+    <div class="q-sub" id="q-sub"></div>
+    <div class="scale-wrap" id="scale-wrap"></div>
+    <div class="nav-row">
+      <button class="btn-prev" id="btn-prev" onclick="prevQuestion()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2.5L4.5 7 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Previous
+      </button>
+      <button class="btn-next" id="btn-next" onclick="nextQuestion()">
+        Next
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCREEN 3: EMAIL GATE
+══════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-gate">
+  <div class="wrap">
+    <span class="gate-eyebrow">Your pattern has been identified</span>
+    <h2 class="gate-h2">Enter your details to<br>see your result</h2>
+    <p class="gate-body">
+      Your diagnostic result includes your archetype, the specific lie it tells you,
+      the pattern it has created in your life, and the question that can interrupt it.
+      <strong>We will also email you the full breakdown</strong> so you can return to it.
+    </p>
+    <div class="gate-form">
+      <div class="gate-field">
+        <label class="gate-label" for="gate-name">Full Name</label>
+        <input class="gate-input" type="text" id="gate-name" placeholder="Your full name" autocomplete="name"/>
+        <span class="gate-error" id="err-name">Please enter your name</span>
+      </div>
+      <div class="gate-field">
+        <label class="gate-label" for="gate-email">Email Address</label>
+        <input class="gate-input" type="email" id="gate-email" placeholder="your@email.com" autocomplete="email"/>
+        <span class="gate-error" id="err-email">Please enter a valid email address</span>
+      </div>
+    </div>
+    <button class="btn-reveal" onclick="revealResult()">
+      Reveal my pattern
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="gate-privacy" style="margin-top:16px;">
+      Your information is private. We do not share or sell it. Ever.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCREEN 4: RESULT
+══════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-result">
+  <div class="wrap">
+    <span class="result-eyebrow" id="r-eyebrow">Your Pattern &middot; The Unfinished Life Diagnostic</span>
+    <h1 class="result-archetype-name" id="r-name"></h1>
+    <span class="result-mask-tag" id="r-mask-tag"></span>
+
+    <!-- Primary archetype card -->
+    <div class="result-card" id="r-card">
+      <div class="result-lie" id="r-lie"></div>
+      <div class="result-desc" id="r-desc"></div>
+      <div class="result-pattern">
+        <span class="result-pattern-label">The pattern</span>
+        <span id="r-pattern"></span>
+      </div>
+      <div class="result-question-wrap">
+        <span class="result-q-label">The question to sit with</span>
+        <div class="result-question" id="r-question"></div>
+      </div>
+    </div>
+
+    <!-- Traffic light matrix -->
+    <div class="tl-section">
+      <span class="tl-heading">Your pattern profile &mdash; where the cost is highest</span>
+      <div class="tl-grid" id="tl-grid"></div>
+    </div>
+
+    <!-- Secondary archetype -->
+    <div class="secondary-card" id="secondary-card">
+      <span class="secondary-label">Secondary pattern</span>
+      <div class="secondary-name" id="s-name"></div>
+      <div class="secondary-desc" id="s-desc"></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <span class="cta-eyebrow">April 11, 2026 &middot; Nairobi &middot; United Kenya Club</span>
+      <h2 class="cta-h2">This pattern has a name.<br>Now it needs an interruption.</h2>
+      <p class="cta-body">
+        The Unfinished Life Summit is a 3-hour diagnostic session designed to do one thing:
+        <strong>give you the system that closes the gap between started and finished.</strong>
+        Not motivation. Not inspiration. A system. Seats are limited and selective.
+      </p>
+      <a href="https://houseofmastery.co" class="btn-cta">
+        Reserve Your Place &rarr;
+      </a>
+      <p class="cta-meta">KSh 2,500 &middot; April 11, 2026 &middot; United Kenya Club, Nairobi</p>
+      <span class="cta-urgency">&#9679; Waitlist now open &mdash; limited seats</span>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h3 class="share-heading">Know someone living an unfinished life?</h3>
+      <p class="share-sub">
+        Most people who need this diagnostic will never take it unless someone sends it to them.
+        If this result was accurate, share it. You might be the reason someone finally interrupts their pattern.
+      </p>
+      <div class="share-buttons">
+        <a class="share-btn whatsapp" id="share-whatsapp" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-btn facebook" id="share-facebook" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X (Twitter)
+        </a>
+        <a class="share-btn instagram" id="share-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+
+    <button class="btn-restart" onclick="restartAssessment()">Take the assessment again</button>
+  </div>
+</div>
+
+</body>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+// ══════════════════════════════════════════════════════════════
+// CONFIGURATION — fill these in after EmailJS setup
+// ══════════════════════════════════════════════════════════════
+const EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID  = 'YOUR_EMAILJS_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdRrxDK8wXt4DImqKtlF1YZTXbNP4M0wvXvf-BFWLb8iFM54A/formResponse';
+const FORM_ENTRY_NAME    = 'entry.944937054';
+const FORM_ENTRY_EMAIL   = 'entry.1351114904';
+// We'll use the "What is the ONE thing you want to walk away with" field to store archetype
+const FORM_ENTRY_ARCHETYPE = 'entry.1972209118';
+
+const ASSESSMENT_URL = 'https://houseofmastery.co/diagnostic';
+const SUMMIT_URL     = 'https://houseofmastery.co';
+
+// ══════════════════════════════════════════════════════════════
+// QUESTIONS DATA
+// ══════════════════════════════════════════════════════════════
+const QUESTIONS = [
+  { id:1,  mask:'fear',        domain:'work',          text:'I have something I genuinely want to build or launch — but I keep refining the plan instead of starting.', sub:'Think about your most important professional goal right now.' },
+  { id:2,  mask:'fear',        domain:'work',          text:'I know what I want to do next in my work or career. I\'m just not ready to begin.', sub:'Not lack of clarity — readiness.' },
+  { id:3,  mask:'fear',        domain:'relationships', text:'I keep the people I care about at a comfortable distance — close enough, but not fully known.', sub:'Think about the people who matter most to you.' },
+  { id:4,  mask:'fear',        domain:'relationships', text:'It is easier for me to be helpful or useful to people than to be truly seen by them.', sub:'Helpfulness as a shield.' },
+  { id:5,  mask:'fear',        domain:'self',          text:'I have invested significantly in learning and personal development — but I haven\'t fully applied what I know.', sub:'Books read, courses taken, seminars attended.' },
+  { id:6,  mask:'fear',        domain:'self',          text:'I am still preparing for a version of myself that hasn\'t fully arrived yet.', sub:'The transformation that\'s always coming.' },
+  { id:7,  mask:'drift',       domain:'work',          text:'I\'ve started projects with real excitement — and quietly moved on before they were finished.', sub:'Think about the last three years.' },
+  { id:8,  mask:'drift',       domain:'work',          text:'I lose momentum somewhere in the middle of things — after the excitement of starting, before the satisfaction of finishing.', sub:'The unglamorous middle.' },
+  { id:9,  mask:'drift',       domain:'relationships', text:'The people closest to me would say I am physically present but mentally somewhere else.', sub:'Be honest about this one.' },
+  { id:10, mask:'drift',       domain:'relationships', text:'My best attention goes to my work or responsibilities. The people I love receive what is left.', sub:'The leftover model of love.' },
+  { id:11, mask:'drift',       domain:'self',          text:'I stay busy enough that I rarely stop to ask what I actually want from my life.', sub:'Busyness as anesthesia.' },
+  { id:12, mask:'drift',       domain:'self',          text:'The harder questions about who I am and what I\'m becoming keep getting postponed — because life is always in motion.', sub:'The question that never gets scheduled.' },
+  { id:13, mask:'performance', domain:'work',          text:'I have built impressive things — credentials, titles, achievements — that are not really what I most wanted to build.', sub:'The résumé that tells half the story.' },
+  { id:14, mask:'performance', domain:'work',          text:'My achievements have kept growing, while the work that actually matters to me has quietly stalled.', sub:'The CV grows louder as the calling grows quieter.' },
+  { id:15, mask:'performance', domain:'relationships', text:'I show love primarily by providing — financially, practically — rather than by being emotionally present.', sub:'Love expressed through logistics.' },
+  { id:16, mask:'performance', domain:'relationships', text:'The people in my life would describe me as reliable and giving — but might struggle to say they truly know me.', sub:'Giving everything except yourself.' },
+  { id:17, mask:'performance', domain:'self',          text:'I have a strong external identity — title, reputation, role — but privately wonder who I actually am.', sub:'The unfinished self inside a finished résumé.' },
+  { id:18, mask:'performance', domain:'self',          text:'If I removed my professional role and credentials, I am not entirely sure what would remain.', sub:'The most important question in this assessment.' },
+];
+
+const SCALE_LABELS = [
+  'Not true of me',
+  'Rarely true',
+  'Sometimes true',
+  'Often true',
+  'This is me'
+];
+
+// ══════════════════════════════════════════════════════════════
+// ARCHETYPES
+// ══════════════════════════════════════════════════════════════
+const ARCHETYPES = {
+  'fear-work': {
+    name: 'The Perfectionist',
+    mask: 'Fear disguised as Wisdom',
+    domain: 'Work',
+    maskKey: 'fear',
+    color: '#9B4030',
+    lie: '"I\'ll start when it\'s ready."',
+    description: 'You have the talent. You have the plan. What you don\'t have is enough willingness to be imperfect in public. Every preparation cycle is a quiet negotiation with fear — because a plan that never launches can never fail. The goal isn\'t readiness. The goal is deniability. Dan Kennedy called this "getting ready to get ready." It is the most expensive hobby a capable person can have.',
+    pattern: 'You delay starting. You refine instead of execute. You are one of the most capable people in the room — and the least launched.',
+    question: 'What would you start tomorrow if failure wasn\'t a verdict on your worth?',
+  },
+  'fear-relationships': {
+    name: 'The Managed Heart',
+    mask: 'Fear disguised as Wisdom',
+    domain: 'Relationships',
+    maskKey: 'fear',
+    color: '#9B4030',
+    lie: '"I don\'t want to get hurt."',
+    description: 'You are present enough to feel connected. You are distant enough to never be truly known. Relationships in your life are managed, not inhabited. You set the terms of intimacy carefully — and call it wisdom, or privacy, or strength. It is none of those things. It is fear with good posture. Donald Miller writes that the most dangerous thing a person can do is stop letting people in. You have been doing it for years.',
+    pattern: 'You are close to many people and deeply known by almost none. The relationships in your life are well-maintained and emotionally shallow.',
+    question: 'Who knows the version of you that exists when the performance stops?',
+  },
+  'fear-self': {
+    name: 'The Eternal Student',
+    mask: 'Fear disguised as Wisdom',
+    domain: 'Self',
+    maskKey: 'fear',
+    color: '#9B4030',
+    lie: '"I\'m almost ready."',
+    description: 'You have read the books. Attended the seminars. Completed the courses. You have consumed more transformation than most people will ever encounter — and entered almost none of it. Learning creates the sensation of becoming without requiring you to actually change. It is the most socially acceptable form of avoidance. Robert Cialdini would call this "commitment without action" — the illusion of progress that keeps you exactly where you are.',
+    pattern: 'You are perpetually in preparation. The transformation keeps being scheduled for next month. You confuse studying yourself with knowing yourself.',
+    question: 'What do you already know that you have been refusing to apply?',
+  },
+  'drift-work': {
+    name: 'The Serial Restarter',
+    mask: 'Drift disguised as Busyness',
+    domain: 'Work',
+    maskKey: 'drift',
+    color: '#2A4A7A',
+    lie: '"I just need the right idea."',
+    description: 'You launch beautifully. You abandon quietly. The graveyard of your started things fills slowly — each one explained away by a new and better thing. This is not lack of ideas. It is an allergy to the middle: the unglamorous, unrewarded stretch of work between inspired beginning and earned completion. Kennedy was blunt about this: "The market doesn\'t pay for starting. It pays for finishing." The middle is where character is built. You keep skipping it.',
+    pattern: 'Your history is full of exciting beginnings and silent endings. You are not lazy — you are addicted to the feeling of starting, which means you never arrive anywhere.',
+    question: 'What is the one thing you have started and not finished that would change everything if you completed it?',
+  },
+  'drift-relationships': {
+    name: 'The Absent Present',
+    mask: 'Drift disguised as Busyness',
+    domain: 'Relationships',
+    maskKey: 'drift',
+    color: '#2A4A7A',
+    lie: '"I\'m there for them. I\'m just busy."',
+    description: 'You occupy the space of relationship without inhabiting it. You are in the house but not in the room. You are at the table but somewhere else. The people who matter most to you receive the remainder — the attention that is left after everything else has been attended to. You call this love. They experience it as distance. Miller writes that the people who love us most are the ones who learn to need less of us — and we let them.',
+    pattern: 'Your physical presence is consistent. Your real presence is rationed. The people closest to you have learned to need less of you — and you have noticed, and said nothing.',
+    question: 'When did the people you love last feel that you were fully there?',
+  },
+  'drift-self': {
+    name: 'The Moving Target',
+    mask: 'Drift disguised as Busyness',
+    domain: 'Self',
+    maskKey: 'drift',
+    color: '#2A4A7A',
+    lie: '"I\'m fine. I\'m just busy."',
+    description: 'Busyness is your anesthetic. As long as the schedule is full, the question doesn\'t surface. The inner work never gets scheduled — because scheduling it would require admitting it exists. You are not running from failure. You are running from stillness, because stillness is where the uncomfortable truth lives. Kennedy\'s rule: "If you are too busy to think, you are too busy to succeed."',
+    pattern: 'You are highly productive and deeply unexamined. You know how to execute on everything except the one conversation you need to have with yourself.',
+    question: 'What would you discover about yourself if your calendar were empty for one week?',
+  },
+  'performance-work': {
+    name: 'The Trophy Collector',
+    mask: 'Performance disguised as Arrival',
+    domain: 'Work',
+    maskKey: 'performance',
+    color: '#8A6020',
+    lie: '"My credentials speak for themselves."',
+    description: 'You have built impressive things. The titles are real. The achievements are earned. But they are not the thing — they are substitutes for the thing. Every credential is evidence that you are capable of the real work while simultaneously avoiding it. The CV grows louder as the calling grows quieter. And you know it. Kennedy called this "the most dangerous success" — when what you\'ve built is impressive enough to justify never building what you actually wanted.',
+    pattern: 'You are decorated in the wrong direction. Your external life is full. Your actual work — the work that would matter — remains undone.',
+    question: 'What would you build if no one would ever know you built it?',
+  },
+  'performance-relationships': {
+    name: 'The Provider',
+    mask: 'Performance disguised as Arrival',
+    domain: 'Relationships',
+    maskKey: 'performance',
+    color: '#8A6020',
+    lie: '"I give them everything they need."',
+    description: 'You show love through output. You provide financially, practically, logistically. The people in your life are taken care of — and quietly starving for something you are not giving them. Presence. Vulnerability. The version of you that exists when the performance stops. Providing is real. It is also a way of being indispensable without being known. Miller calls this "love as transaction" — and it leaves both parties empty.',
+    pattern: 'Your generosity is real and your absence is real. The people you love are grateful and lonely at the same time.',
+    question: 'What would your relationships look like if you could no longer provide anything material?',
+  },
+  'performance-self': {
+    name: 'The Decorated Stranger',
+    mask: 'Performance disguised as Arrival',
+    domain: 'Self',
+    maskKey: 'performance',
+    color: '#8A6020',
+    lie: '"I know who I am."',
+    description: 'You have a strong external identity — title, reputation, role. You can describe yourself in a sentence. What you cannot do is sit quietly with yourself and feel at home. The résumé is finished. The self is not. Cialdini\'s research shows that people who build strong public identities often lose access to their private ones — because the performance becomes the person. You have been performing so long you have forgotten what you were performing for.',
+    pattern: 'You are highly defined externally and privately uncertain. Remove the role and the credentials, and you are not entirely sure what remains.',
+    question: 'Who are you when no one is watching and nothing is required of you?',
+  },
+};
+
+const MASK_LABELS = { fear: 'Fear', drift: 'Drift', performance: 'Performance' };
+const DOMAIN_LABELS = { work: 'Work & Career', relationships: 'Relationships', self: 'Self & Identity' };
+const MASK_COLORS = { fear: '#9B4030', drift: '#2A4A7A', performance: '#8A6020' };
+
+// ══════════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════════
+let currentQ = 0;
+let answers  = {};
+let userName = '';
+let userEmail = '';
+let computedResult = null;
+
+// ══════════════════════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgressBar(step, total) {
+  const pct = total > 0 ? Math.round((step / total) * 100) : 0;
+  document.getElementById('progress-bar-fill').style.width = pct + '%';
+  const label = document.getElementById('progress-label');
+  if (total > 0) {
+    label.textContent = step + ' / ' + total;
+    label.style.opacity = '1';
+  } else {
+    label.style.opacity = '0';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// INTRO → START
+// ══════════════════════════════════════════════════════════════
+function startAssessment() {
+  currentQ = 0;
+  answers  = {};
+  renderQuestion();
+  showScreen('screen-question');
+  updateProgressBar(0, QUESTIONS.length);
+}
+
+// ══════════════════════════════════════════════════════════════
+// RENDER QUESTION
+// ══════════════════════════════════════════════════════════════
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const total = QUESTIONS.length;
+
+  document.getElementById('q-counter').textContent = 'Statement ' + (currentQ + 1) + ' of ' + total;
+
+  const maskEl = document.getElementById('q-mask-label');
+  maskEl.textContent = MASK_LABELS[q.mask] + ' · ' + DOMAIN_LABELS[q.domain];
+  maskEl.className = 'q-mask-label q-mask-' + q.mask;
+
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-sub').textContent  = q.sub;
+
+  // Render scale
+  const wrap = document.getElementById('scale-wrap');
+  wrap.innerHTML = '';
+  SCALE_LABELS.forEach((label, i) => {
+    const val = i + 1;
+    const isSelected = answers[q.id] === val;
+    const opt = document.createElement('div');
+    opt.className = 'scale-option' + (isSelected ? ' selected' : '');
+    opt.setAttribute('role', 'radio');
+    opt.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+    opt.innerHTML = `
+      <div class="scale-dot"></div>
+      <span class="scale-num">${val}</span>
+      <span class="scale-label">${label}</span>
+    `;
+    opt.addEventListener('click', () => selectAnswer(q.id, val));
+    wrap.appendChild(opt);
+  });
+
+  // Prev button
+  const prevBtn = document.getElementById('btn-prev');
+  prevBtn.disabled = currentQ === 0;
+
+  // Next button
+  updateNextButton();
+
+  // Progress
+  updateProgressBar(currentQ, total);
+}
+
+function selectAnswer(qId, val) {
+  answers[qId] = val;
+  // Re-render scale to reflect selection
+  const opts = document.querySelectorAll('.scale-option');
+  opts.forEach((opt, i) => {
+    const isSelected = (i + 1) === val;
+    opt.classList.toggle('selected', isSelected);
+    opt.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+  });
+  updateNextButton();
+}
+
+function updateNextButton() {
+  const q = QUESTIONS[currentQ];
+  const hasAnswer = answers[q.id] !== undefined;
+  const btn = document.getElementById('btn-next');
+  btn.classList.toggle('enabled', hasAnswer);
+  const isLast = currentQ === QUESTIONS.length - 1;
+  btn.innerHTML = isLast
+    ? 'See my pattern <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    : 'Next <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+function nextQuestion() {
+  const q = QUESTIONS[currentQ];
+  if (!answers[q.id]) return;
+  if (currentQ < QUESTIONS.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    // All done — go to gate
+    computedResult = computeResult();
+    showScreen('screen-gate');
+    updateProgressBar(QUESTIONS.length, QUESTIONS.length);
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuestion();
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// COMPUTE RESULT
+// ══════════════════════════════════════════════════════════════
+function computeResult() {
+  const maskScores   = { fear: 0, drift: 0, performance: 0 };
+  const domainScores = { work: 0, relationships: 0, self: 0 };
+  const cellScores   = {};
+
+  QUESTIONS.forEach(q => {
+    const val = answers[q.id] || 0;
+    maskScores[q.mask]     += val;
+    domainScores[q.domain] += val;
+    const key = q.mask + '-' + q.domain;
+    cellScores[key] = (cellScores[key] || 0) + val;
+  });
+
+  const dominantMask   = Object.entries(maskScores).sort((a,b) => b[1]-a[1])[0][0];
+  const dominantDomain = Object.entries(domainScores).sort((a,b) => b[1]-a[1])[0][0];
+  const primaryCell    = dominantMask + '-' + dominantDomain;
+
+  const sortedCells  = Object.entries(cellScores).sort((a,b) => b[1]-a[1]);
+  const secondaryCell = sortedCells[1] ? sortedCells[1][0] : null;
+
+  return { maskScores, domainScores, cellScores, primaryCell, secondaryCell, dominantMask, dominantDomain };
+}
+
+// ══════════════════════════════════════════════════════════════
+// GATE → REVEAL
+// ══════════════════════════════════════════════════════════════
+function revealResult() {
+  const nameEl  = document.getElementById('gate-name');
+  const emailEl = document.getElementById('gate-email');
+  const errName  = document.getElementById('err-name');
+  const errEmail = document.getElementById('err-email');
+
+  let valid = true;
+
+  if (!nameEl.value.trim()) {
+    nameEl.classList.add('error');
+    errName.classList.add('show');
+    valid = false;
+  } else {
+    nameEl.classList.remove('error');
+    errName.classList.remove('show');
+  }
+
+  const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRx.test(emailEl.value.trim())) {
+    emailEl.classList.add('error');
+    errEmail.classList.add('show');
+    valid = false;
+  } else {
+    emailEl.classList.remove('error');
+    errEmail.classList.remove('show');
+  }
+
+  if (!valid) return;
+
+  userName  = nameEl.value.trim();
+  userEmail = emailEl.value.trim();
+
+  // Show sending overlay
+  document.getElementById('sending-overlay').classList.add('show');
+
+  // Fire both async tasks
+  Promise.allSettled([
+    submitToGoogleForm(),
+    sendEmailJS()
+  ]).then(() => {
+    document.getElementById('sending-overlay').classList.remove('show');
+    renderResult();
+    showScreen('screen-result');
+    updateProgressBar(0, 0);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// GOOGLE FORM SUBMISSION (no-cors silent)
+// ══════════════════════════════════════════════════════════════
+function submitToGoogleForm() {
+  const archetype = ARCHETYPES[computedResult.primaryCell];
+  const body = new URLSearchParams();
+  body.append(FORM_ENTRY_NAME,      userName);
+  body.append(FORM_ENTRY_EMAIL,     userEmail);
+  body.append(FORM_ENTRY_ARCHETYPE, 'Diagnostic Result: ' + archetype.name + ' (' + archetype.mask + ')');
+
+  return fetch(GOOGLE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  }).catch(() => {}); // Silently ignore CORS errors — submission still goes through
+}
+
+// ══════════════════════════════════════════════════════════════
+// EMAILJS
+// ══════════════════════════════════════════════════════════════
+function sendEmailJS() {
+  if (EMAILJS_PUBLIC_KEY === 'YOUR_EMAILJS_PUBLIC_KEY') return Promise.resolve(); // Skip if not configured
+
+  const archetype = ARCHETYPES[computedResult.primaryCell];
+  const secondary = computedResult.secondaryCell ? ARCHETYPES[computedResult.secondaryCell] : null;
+
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  const trafficRows = buildTrafficLightText();
+
+  return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    to_name:          userName,
+    to_email:         userEmail,
+    archetype_name:   archetype.name,
+    archetype_mask:   archetype.mask,
+    archetype_domain: archetype.domain,
+    archetype_lie:    archetype.lie,
+    archetype_desc:   archetype.description,
+    archetype_pattern:archetype.pattern,
+    archetype_question:archetype.question,
+    secondary_name:   secondary ? secondary.name : 'N/A',
+    traffic_summary:  trafficRows,
+    summit_url:       SUMMIT_URL,
+    assessment_url:   ASSESSMENT_URL,
+  }).catch(() => {});
+}
+
+function buildTrafficLightText() {
+  const r = computedResult;
+  const maxMask   = Math.max(...Object.values(r.maskScores));
+  const maxDomain = Math.max(...Object.values(r.domainScores));
+
+  const maskLines = Object.entries(r.maskScores).map(([k,v]) => {
+    const pct = Math.round((v / (maxMask * 1.0)) * 100);
+    const status = pct >= 70 ? '🔴 HIGH' : pct >= 40 ? '🟡 MODERATE' : '🟢 LOW';
+    return MASK_LABELS[k] + ': ' + status + ' (' + v + ' pts)';
+  });
+  const domainLines = Object.entries(r.domainScores).map(([k,v]) => {
+    const pct = Math.round((v / (maxDomain * 1.0)) * 100);
+    const status = pct >= 70 ? '🔴 HIGH' : pct >= 40 ? '🟡 MODERATE' : '🟢 LOW';
+    return DOMAIN_LABELS[k] + ': ' + status + ' (' + v + ' pts)';
+  });
+  return [...maskLines, ...domainLines].join('\n');
+}
+
+// ══════════════════════════════════════════════════════════════
+// RENDER RESULT SCREEN
+// ══════════════════════════════════════════════════════════════
+function renderResult() {
+  const r = computedResult;
+  const archetype = ARCHETYPES[r.primaryCell];
+  const secondary = r.secondaryCell ? ARCHETYPES[r.secondaryCell] : null;
+
+  // Header
+  document.getElementById('r-name').textContent = archetype.name;
+
+  const maskTag = document.getElementById('r-mask-tag');
+  maskTag.textContent = archetype.mask + ' · ' + archetype.domain;
+  const maskColors = { fear: { bg:'rgba(155,64,48,0.15)', color:'#e07060', border:'rgba(155,64,48,0.35)' }, drift: { bg:'rgba(42,74,122,0.20)', color:'#7aA0d8', border:'rgba(42,74,122,0.40)' }, performance: { bg:'rgba(138,96,32,0.20)', color:'#d4a84a', border:'rgba(138,96,32,0.40)' } };
+  const mc = maskColors[archetype.maskKey];
+  maskTag.style.background = mc.bg;
+  maskTag.style.color = mc.color;
+  maskTag.style.border = '1px solid ' + mc.border;
+
+  // Card
+  const card = document.getElementById('r-card');
+  card.style.background = 'rgba(' + hexToRgb(archetype.color) + ',0.08)';
+  card.style.borderColor = 'rgba(' + hexToRgb(archetype.color) + ',0.30)';
+
+  document.getElementById('r-lie').textContent     = archetype.lie;
+  document.getElementById('r-lie').style.color     = archetype.color === '#9B4030' ? '#e07060' : archetype.color === '#2A4A7A' ? '#7aA0d8' : '#d4a84a';
+  document.getElementById('r-desc').textContent    = archetype.description;
+  document.getElementById('r-pattern').textContent = archetype.pattern;
+  document.getElementById('r-question').textContent = archetype.question;
+
+  // Traffic light grid
+  renderTrafficLight(r);
+
+  // Secondary
+  const secCard = document.getElementById('secondary-card');
+  if (secondary && secondary.name !== archetype.name) {
+    document.getElementById('s-name').textContent = secondary.name + ' · ' + secondary.mask;
+    document.getElementById('s-desc').textContent = secondary.pattern;
+    secCard.style.display = 'block';
+  } else {
+    secCard.style.display = 'none';
+  }
+
+  // Share links
+  const shareText = encodeURIComponent('I just took the Unfinished Life Diagnostic and discovered I am "' + archetype.name + '". If you\'ve been starting things and not finishing them, take this — it\'s uncomfortably accurate.');
+  const shareUrl  = encodeURIComponent(ASSESSMENT_URL);
+
+  document.getElementById('share-whatsapp').href  = 'https://wa.me/?text=' + shareText + '%20' + shareUrl;
+  document.getElementById('share-facebook').href  = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+  document.getElementById('share-twitter').href   = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + shareUrl;
+  // Instagram doesn't support direct sharing links — opens Instagram home
+}
+
+function renderTrafficLight(r) {
+  const grid = document.getElementById('tl-grid');
+  grid.innerHTML = '';
+
+  const maxMask   = Math.max(...Object.values(r.maskScores));
+  const maxDomain = Math.max(...Object.values(r.domainScores));
+
+  // Masks
+  const maskHeader = document.createElement('div');
+  maskHeader.style.cssText = 'font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;margin-top:4px;';
+  maskHeader.textContent = 'Pattern (Mask)';
+  grid.appendChild(maskHeader);
+
+  Object.entries(r.maskScores).sort((a,b) => b[1]-a[1]).forEach(([k,v]) => {
+    const pct = Math.round((v / maxMask) * 100);
+    const { cls, dotCls, labelCls, scoreCls, fillCls, statusText } = trafficClass(pct);
+    const row = document.createElement('div');
+    row.className = 'tl-row ' + cls;
+    row.innerHTML = `
+      <div class="tl-dot ${dotCls}"></div>
+      <div class="tl-label ${labelCls}">${MASK_LABELS[k]}</div>
+      <div class="tl-bar-wrap"><div class="tl-bar-fill ${fillCls}" style="width:0%" data-pct="${pct}"></div></div>
+      <div class="tl-score ${scoreCls}">${statusText}</div>
+    `;
+    grid.appendChild(row);
+  });
+
+  // Domains
+  const domHeader = document.createElement('div');
+  domHeader.style.cssText = 'font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;margin-top:20px;';
+  domHeader.textContent = 'Life Area (Domain)';
+  grid.appendChild(domHeader);
+
+  Object.entries(r.domainScores).sort((a,b) => b[1]-a[1]).forEach(([k,v]) => {
+    const pct = Math.round((v / maxDomain) * 100);
+    const { cls, dotCls, labelCls, scoreCls, fillCls, statusText } = trafficClass(pct);
+    const row = document.createElement('div');
+    row.className = 'tl-row ' + cls;
+    row.innerHTML = `
+      <div class="tl-dot ${dotCls}"></div>
+      <div class="tl-label ${labelCls}">${DOMAIN_LABELS[k]}</div>
+      <div class="tl-bar-wrap"><div class="tl-bar-fill ${fillCls}" style="width:0%" data-pct="${pct}"></div></div>
+      <div class="tl-score ${scoreCls}">${statusText}</div>
+    `;
+    grid.appendChild(row);
+  });
+
+  // Animate bars after a tick
+  setTimeout(() => {
+    document.querySelectorAll('.tl-bar-fill').forEach(el => {
+      el.style.width = el.dataset.pct + '%';
+    });
+  }, 120);
+}
+
+function trafficClass(pct) {
+  if (pct >= 70) return { cls:'tl-red',   dotCls:'tl-dot-red',   labelCls:'tl-label-red',   scoreCls:'tl-score-red',   fillCls:'tl-fill-red',   statusText:'High' };
+  if (pct >= 40) return { cls:'tl-amber', dotCls:'tl-dot-amber', labelCls:'tl-label-amber', scoreCls:'tl-score-amber', fillCls:'tl-fill-amber', statusText:'Moderate' };
+  return          { cls:'tl-green', dotCls:'tl-dot-green', labelCls:'tl-label-green', scoreCls:'tl-score-green', fillCls:'tl-fill-green', statusText:'Low' };
+}
+
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  return r + ',' + g + ',' + b;
+}
+
+// ══════════════════════════════════════════════════════════════
+// RESTART
+// ══════════════════════════════════════════════════════════════
+function restartAssessment() {
+  currentQ = 0;
+  answers  = {};
+  computedResult = null;
+  userName = '';
+  userEmail = '';
+  document.getElementById('gate-name').value  = '';
+  document.getElementById('gate-email').value = '';
+  showScreen('screen-intro');
+  updateProgressBar(0, 0);
+}
+
+// ══════════════════════════════════════════════════════════════
+// KEYBOARD NAV
+// ══════════════════════════════════════════════════════════════
+document.addEventListener('keydown', e => {
+  const screen = document.querySelector('.screen.active');
+  if (!screen || screen.id !== 'screen-question') return;
+  const num = parseInt(e.key);
+  if (num >= 1 && num <= 5) {
+    selectAnswer(QUESTIONS[currentQ].id, num);
+  }
+  if (e.key === 'Enter' || e.key === 'ArrowRight') {
+    if (answers[QUESTIONS[currentQ].id]) nextQuestion();
+  }
+  if (e.key === 'ArrowLeft') prevQuestion();
+});
+</script>
+</html>
