@@ -13,36 +13,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --bg:          #07111f;
-  --bg-alt:      #0b1c30;
-  --surface:     rgba(255,255,255,0.04);
-  --border:      rgba(255,255,255,0.08);
-  --text:        #f0ebe2;
-  --text-mid:    rgba(240,235,226,0.75);
-  --text-dim:    rgba(240,235,226,0.45);
+  --bg:          #faf6ed;
+  --bg-alt:      #f5f0e8;
+  --bg-white:    #ffffff;
+  --surface:     rgba(13,34,64,0.04);
+  --border:      rgba(13,34,64,0.10);
+  --border-mid:  rgba(13,34,64,0.16);
+  --text:        #0d2240;
+  --text-mid:    rgba(13,34,64,0.72);
+  --text-dim:    rgba(13,34,64,0.45);
   --gold:        #c8a45a;
   --gold-soft:   rgba(200,164,90,0.10);
-  --gold-border: rgba(200,164,90,0.22);
+  --gold-border: rgba(200,164,90,0.30);
   --navy:        #0d2240;
-  --ivory:       #f5f0e8;
-  --ivory-warm:  #ede8df;
-  --text-navy:   #0d2240;
+  --navy-deep:   #07111f;
+  --ivory:       #faf6ed;
+  --ivory-warm:  #f5f0e8;
   --display:     'Lora', Georgia, serif;
   --sans:        'Inter', system-ui, sans-serif;
   --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   /* Traffic light */
   --red:         #c0392b;
-  --red-soft:    rgba(192,57,43,0.12);
-  --red-border:  rgba(192,57,43,0.35);
+  --red-soft:    rgba(192,57,43,0.08);
+  --red-border:  rgba(192,57,43,0.25);
   --amber:       #d4850a;
-  --amber-soft:  rgba(212,133,10,0.12);
-  --amber-border:rgba(212,133,10,0.35);
+  --amber-soft:  rgba(212,133,10,0.08);
+  --amber-border:rgba(212,133,10,0.25);
   --green:       #1e7e4a;
-  --green-soft:  rgba(30,126,74,0.12);
-  --green-border:rgba(30,126,74,0.35);
+  --green-soft:  rgba(30,126,74,0.08);
+  --green-border:rgba(30,126,74,0.25);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -56,7 +57,7 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(7,17,31,0.92);
+  background: rgba(250,246,237,0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -64,7 +65,7 @@ nav {
   height: 60px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-brand { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.70); }
+.nav-brand { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); }
 .nav-back { font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
 .nav-back:hover { opacity: 0.75; }
 
@@ -126,15 +127,15 @@ nav {
   font-family: var(--sans); font-size: 14px; font-weight: 500;
   color: var(--text-mid); line-height: 1.70; margin-bottom: 48px;
 }
-.intro-warning strong { color: var(--gold); font-weight: 700; }
+.intro-warning strong { color: var(--navy); font-weight: 700; }
 .btn-start {
   display: inline-flex; align-items: center; gap: 12px;
-  background: var(--gold); color: var(--bg);
+  background: var(--navy); color: #fff;
   font-family: var(--sans); font-size: 15px; font-weight: 700;
   padding: 18px 52px; border-radius: 100px; border: none; cursor: pointer;
   transition: all 0.3s var(--ease); letter-spacing: 0.03em;
 }
-.btn-start:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(200,164,90,0.28); }
+.btn-start:hover { background: #1a3355; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(13,34,64,0.20); }
 .btn-start svg { transition: transform 0.3s var(--ease); }
 .btn-start:hover svg { transform: translateX(4px); }
 
@@ -150,9 +151,9 @@ nav {
   padding: 4px 12px; border-radius: 100px; display: inline-block;
   margin-bottom: 32px;
 }
-.q-mask-fear    { background: rgba(155,64,48,0.15); color: #e07060; border: 1px solid rgba(155,64,48,0.30); }
-.q-mask-drift   { background: rgba(42,74,122,0.20); color: #7aA0d8; border: 1px solid rgba(42,74,122,0.40); }
-.q-mask-performance { background: rgba(138,96,32,0.20); color: #d4a84a; border: 1px solid rgba(138,96,32,0.40); }
+.q-mask-fear    { background: rgba(155,64,48,0.08); color: #9B4030; border: 1px solid rgba(155,64,48,0.22); }
+.q-mask-drift   { background: rgba(42,74,122,0.08); color: #2A4A7A; border: 1px solid rgba(42,74,122,0.22); }
+.q-mask-performance { background: rgba(138,96,32,0.08); color: #8A6020; border: 1px solid rgba(138,96,32,0.22); }
 
 .q-text {
   font-family: var(--display); font-size: clamp(20px, 3.5vw, 28px);
@@ -170,18 +171,18 @@ nav {
 .scale-option {
   display: flex; align-items: center; gap: 16px;
   padding: 16px 20px; border-radius: 12px;
-  border: 1px solid var(--border); background: var(--surface);
+  border: 1px solid var(--border); background: var(--bg-white);
   cursor: pointer; transition: all 0.22s var(--ease);
   -webkit-tap-highlight-color: transparent;
 }
-.scale-option:hover { border-color: rgba(200,164,90,0.35); background: var(--gold-soft); }
+.scale-option:hover { border-color: var(--gold-border); background: var(--gold-soft); }
 .scale-option.selected {
   border-color: var(--gold); background: var(--gold-soft);
   box-shadow: 0 0 0 1px var(--gold);
 }
 .scale-dot {
   width: 20px; height: 20px; border-radius: 50%;
-  border: 2px solid var(--border); flex-shrink: 0;
+  border: 2px solid var(--border-mid); flex-shrink: 0;
   transition: all 0.22s var(--ease);
   display: flex; align-items: center; justify-content: center;
 }
@@ -189,7 +190,7 @@ nav {
   border-color: var(--gold); background: var(--gold);
 }
 .scale-option.selected .scale-dot::after {
-  content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--bg);
+  content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff;
 }
 .scale-num {
   font-family: var(--sans); font-size: 15px; font-weight: 700;
@@ -207,23 +208,23 @@ nav {
 .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .btn-prev {
   display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; border: 1px solid var(--border);
+  background: transparent; border: 1px solid var(--border-mid);
   color: var(--text-dim); font-family: var(--sans); font-size: 13px;
   font-weight: 600; padding: 14px 24px; border-radius: 100px; cursor: pointer;
   transition: all 0.22s var(--ease); letter-spacing: 0.02em;
 }
-.btn-prev:hover:not(:disabled) { border-color: rgba(255,255,255,0.20); color: var(--text); }
+.btn-prev:hover:not(:disabled) { border-color: var(--navy); color: var(--text); }
 .btn-prev:disabled { opacity: 0.30; cursor: default; }
 .btn-next {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--gold); color: var(--bg);
+  background: var(--navy); color: #fff;
   font-family: var(--sans); font-size: 14px; font-weight: 700;
   padding: 14px 32px; border-radius: 100px; border: none; cursor: pointer;
-  transition: all 0.3s var(--ease); letter-spacing: 0.03em; opacity: 0.35;
+  transition: all 0.3s var(--ease); letter-spacing: 0.03em; opacity: 0.30;
   pointer-events: none;
 }
 .btn-next.enabled { opacity: 1; pointer-events: auto; }
-.btn-next.enabled:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,164,90,0.25); }
+.btn-next.enabled:hover { background: #1a3355; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(13,34,64,0.18); }
 .btn-next svg { transition: transform 0.3s var(--ease); }
 .btn-next.enabled:hover svg { transform: translateX(3px); }
 
@@ -250,25 +251,25 @@ nav {
   letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-dim);
 }
 .gate-input {
-  background: var(--surface); border: 1px solid var(--border);
+  background: var(--bg-white); border: 1px solid var(--border-mid);
   border-radius: 10px; padding: 14px 18px;
   font-family: var(--sans); font-size: 15px; font-weight: 500;
   color: var(--text); outline: none; transition: border-color 0.22s;
   width: 100%;
 }
-.gate-input:focus { border-color: var(--gold); }
+.gate-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-soft); }
 .gate-input::placeholder { color: var(--text-dim); }
 .gate-input.error { border-color: var(--red); }
-.gate-error { font-family: var(--sans); font-size: 12px; color: #e07060; font-weight: 500; display: none; }
+.gate-error { font-family: var(--sans); font-size: 12px; color: var(--red); font-weight: 500; display: none; }
 .gate-error.show { display: block; }
 .btn-reveal {
   display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--gold); color: var(--bg);
+  background: var(--navy); color: #fff;
   font-family: var(--sans); font-size: 15px; font-weight: 700;
   padding: 18px 40px; border-radius: 100px; border: none; cursor: pointer;
   transition: all 0.3s var(--ease); letter-spacing: 0.03em; width: 100%;
 }
-.btn-reveal:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(200,164,90,0.28); }
+.btn-reveal:hover { background: #1a3355; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(13,34,64,0.18); }
 .gate-privacy {
   font-family: var(--sans); font-size: 12px; color: var(--text-dim);
   text-align: center; line-height: 1.60;
@@ -292,7 +293,7 @@ nav {
 }
 .result-card {
   border-radius: 16px; padding: 32px; margin-bottom: 40px;
-  border: 1px solid;
+  border: 1px solid; background: var(--bg-white);
 }
 .result-lie {
   font-family: var(--display); font-size: 18px; font-style: italic;
@@ -341,7 +342,7 @@ nav {
 .tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 .tl-label { font-family: var(--sans); font-size: 14px; font-weight: 600; flex: 1; }
 .tl-score { font-family: var(--sans); font-size: 13px; font-weight: 700; }
-.tl-bar-wrap { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); overflow: hidden; }
+.tl-bar-wrap { flex: 1; height: 4px; border-radius: 2px; background: var(--border); overflow: hidden; }
 .tl-bar-fill { height: 100%; border-radius: 2px; transition: width 1.2s var(--ease); }
 
 .tl-red    { background: var(--red-soft);   border-color: var(--red-border);   }
@@ -350,19 +351,19 @@ nav {
 .tl-dot-red   { background: var(--red);   }
 .tl-dot-amber { background: var(--amber); }
 .tl-dot-green { background: var(--green); }
-.tl-label-red   { color: #e07060; }
-.tl-label-amber { color: #d4a84a; }
-.tl-label-green { color: #4caf7d; }
-.tl-score-red   { color: #e07060; }
-.tl-score-amber { color: #d4a84a; }
-.tl-score-green { color: #4caf7d; }
+.tl-label-red   { color: var(--red); }
+.tl-label-amber { color: var(--amber); }
+.tl-label-green { color: var(--green); }
+.tl-score-red   { color: var(--red); }
+.tl-score-amber { color: var(--amber); }
+.tl-score-green { color: var(--green); }
 .tl-fill-red   { background: var(--red);   }
 .tl-fill-amber { background: var(--amber); }
 .tl-fill-green { background: var(--green); }
 
 /* ── SECONDARY ARCHETYPE ── */
 .secondary-card {
-  background: var(--surface); border: 1px solid var(--border);
+  background: var(--bg-white); border: 1px solid var(--border);
   border-radius: 12px; padding: 24px; margin-bottom: 40px;
 }
 .secondary-label {
@@ -381,41 +382,41 @@ nav {
 
 /* ── CTA BLOCK ── */
 .cta-block {
-  background: var(--ivory-warm); border-radius: 20px;
+  background: var(--navy); border-radius: 20px;
   padding: 48px 40px; text-align: center; margin-bottom: 40px;
 }
 .cta-eyebrow {
   font-family: var(--sans); font-size: 11px; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy);
-  opacity: 0.55; margin-bottom: 20px; display: block;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+  opacity: 0.85; margin-bottom: 20px; display: block;
 }
 .cta-h2 {
   font-family: var(--display); font-size: clamp(22px, 4vw, 34px);
-  font-weight: 700; line-height: 1.20; color: var(--navy);
+  font-weight: 700; line-height: 1.20; color: #fff;
   margin-bottom: 16px;
 }
 .cta-body {
   font-family: var(--sans); font-size: 15px; font-weight: 500;
-  color: #3a3a3a; line-height: 1.80; margin-bottom: 32px;
+  color: rgba(255,255,255,0.75); line-height: 1.80; margin-bottom: 32px;
   max-width: 480px; margin-left: auto; margin-right: auto;
 }
-.cta-body strong { color: var(--navy); font-weight: 700; }
+.cta-body strong { color: #fff; font-weight: 700; }
 .btn-cta {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--navy); color: #fff;
+  background: var(--gold); color: var(--navy);
   font-family: var(--sans); font-size: 15px; font-weight: 700;
   padding: 18px 52px; border-radius: 100px; border: none; cursor: pointer;
   transition: all 0.3s var(--ease); letter-spacing: 0.03em;
   text-decoration: none;
 }
-.btn-cta:hover { background: #1a3355; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(13,34,64,0.28); }
+.btn-cta:hover { background: #d4a84a; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(200,164,90,0.35); }
 .cta-meta {
   font-family: var(--sans); font-size: 13px; font-weight: 600;
-  color: #555; margin-top: 20px;
+  color: rgba(255,255,255,0.55); margin-top: 20px;
 }
 .cta-urgency {
   font-family: var(--sans); font-size: 12px; font-weight: 700;
-  color: var(--red); letter-spacing: 0.06em; text-transform: uppercase;
+  color: #e07060; letter-spacing: 0.06em; text-transform: uppercase;
   margin-top: 8px; display: block;
 }
 
@@ -432,31 +433,31 @@ nav {
 .share-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
 .share-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 20px; border-radius: 100px; border: 1px solid var(--border);
+  padding: 12px 20px; border-radius: 100px; border: 1px solid var(--border-mid);
   font-family: var(--sans); font-size: 13px; font-weight: 600;
   cursor: pointer; transition: all 0.22s var(--ease); text-decoration: none;
-  background: var(--surface); color: var(--text-mid);
+  background: var(--bg-white); color: var(--text-mid);
 }
-.share-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); background: rgba(255,255,255,0.06); }
+.share-btn:hover { border-color: var(--navy); color: var(--text); background: var(--bg-white); }
 .share-btn.whatsapp:hover { border-color: #25d366; color: #25d366; }
 .share-btn.instagram:hover { border-color: #e1306c; color: #e1306c; }
 .share-btn.facebook:hover { border-color: #1877f2; color: #1877f2; }
-.share-btn.twitter:hover { border-color: #fff; color: #fff; }
+.share-btn.twitter:hover { border-color: var(--navy); color: var(--navy); }
 
 /* ── RESTART ── */
 .btn-restart {
-  background: transparent; border: 1px solid var(--border);
+  background: transparent; border: 1px solid var(--border-mid);
   color: var(--text-dim); font-family: var(--sans); font-size: 12px;
   font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
   padding: 12px 24px; border-radius: 100px; cursor: pointer;
   transition: all 0.22s; margin-bottom: 80px;
 }
-.btn-restart:hover { border-color: rgba(255,255,255,0.20); color: var(--text); }
+.btn-restart:hover { border-color: var(--navy); color: var(--text); }
 
 /* ── SENDING STATE ── */
 .sending-overlay {
   display: none; position: fixed; inset: 0;
-  background: rgba(7,17,31,0.90); backdrop-filter: blur(24px);
+  background: rgba(250,246,237,0.92); backdrop-filter: blur(24px);
   z-index: 500; align-items: center; justify-content: center;
   flex-direction: column; gap: 24px;
 }
@@ -470,6 +471,14 @@ nav {
 .sending-text {
   font-family: var(--sans); font-size: 14px; font-weight: 600;
   color: var(--text-mid); letter-spacing: 0.06em;
+}
+
+/* ── CONFIRM SCREEN ── */
+.confirm-icon-wrap {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--gold-soft); border: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 32px;
 }
 
 /* ── ANIMATIONS ── */
@@ -501,9 +510,9 @@ nav {
 <!-- NAV -->
 <nav>
   <span class="nav-brand">House of Mastery</span>
-  <a href="https://houseofmastery.co/diagnostic" class="nav-back">
+  <a href="https://houseofmastery.co" class="nav-back">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M8.5 2.5L4 7l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back
+    Back to Summit
   </a>
 </nav>
 
@@ -519,7 +528,7 @@ nav {
 <div class="screen active" id="screen-gate">
   <div class="wrap">
     <span class="gate-eyebrow">Diagnostic Assessment &middot; House of Mastery</span>
-    <h1 class="gate-h2">The <em class="brand-em">Unfinished</em><br>Life Diagnostic</h1>
+    <h2 class="gate-h2">See the pattern that is<br>keeping your life <em>unfinished.</em></h2>
     <p class="gate-body">
       This is not a personality quiz. It is a mirror.<br>
       Most people find it uncomfortable. Most people finish anyway.<br>
@@ -550,9 +559,9 @@ nav {
 ══════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-intro">
   <div class="wrap">
-    <span class="intro-eyebrow">Diagnostic Assessment &middot; House of Mastery</span>
+    <span class="intro-eyebrow">Diagnostic Assessment &middot; House of Mastery &middot; April 11, 2026</span>
     <h1 class="intro-h1">The <em class="brand-em">Unfinished</em><br>Life Diagnostic</h1>
-    <span class="intro-sub">By Dr. Job Mogire, Founder &middot; House of Mastery</span>
+    <span class="intro-sub">By Dr. Job Mogire, MD, FACP, FACC</span>
 
     <p class="intro-body">
       The unfinished life is not a time-management problem. It is a pathology. And like any pathology, it has specific variants. There are 9 distinct patterns of the unfinished life.
@@ -598,7 +607,7 @@ nav {
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SCREEN 2: QUESTIONS
+     SCREEN 3: QUESTIONS
 ══════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-question">
   <div class="wrap">
@@ -621,15 +630,11 @@ nav {
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SCREEN 3: QUESTIONS (unchanged)
-══════════════════════════════════════════════════════ -->
-
-<!-- ══════════════════════════════════════════════════════
-     SCREEN 4: CONFIRMATION (cliffhanger — no result shown)
+     SCREEN 4: CONFIRMATION (cliffhanger)
 ══════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-confirm">
   <div class="wrap" style="text-align:center;padding-top:40px;">
-    <div style="width:64px;height:64px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin:0 auto 32px;">
+    <div class="confirm-icon-wrap">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" style="color:var(--gold)"/></svg>
     </div>
     <span class="gate-eyebrow">Diagnostic Complete</span>
@@ -638,7 +643,7 @@ nav {
       We have calculated your pattern and the exact cost of your unfinished cycles.
     </p>
     <p class="gate-body" style="max-width:420px;margin:0 auto 32px;font-weight:600;color:var(--text);">
-      Go check your email now. Inside, you will find your archetype, your full pattern profile, and your private invitation to the Unfinished Life Summit.
+      Go check your email now. Inside, you will find your archetype, your full pattern profile, and your private invitation to the summit.
     </p>
     <p style="font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text);max-width:420px;margin:0 auto 16px;line-height:1.75;">Most people who get this result will read it, recognise themselves, and do nothing. That is the pattern continuing.</p>
     <p style="font-family:var(--sans);font-size:13px;color:var(--text-dim);margin-bottom:48px;">Check your spam folder if you don&rsquo;t see it within two minutes.</p>
@@ -674,7 +679,7 @@ nav {
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SCREEN 5: RESULT (email link target — kept for future use)
+     SCREEN 5: RESULT (email link target)
 ══════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-result">
   <div class="wrap">
@@ -711,18 +716,18 @@ nav {
 
     <!-- CTA -->
     <div class="cta-block">
-      <span class="cta-eyebrow">The Unfinished Life Summit &middot; Nairobi</span>
+      <span class="cta-eyebrow">April 11, 2026 &middot; Nairobi &middot; United Kenya Club</span>
       <h2 class="cta-h2">This pattern has a name.<br>Now it needs an interruption.</h2>
       <p class="cta-body">
-        The Unfinished Life Summit is a 3-hour session designed to do one thing:
+        The Unfinished Life Summit is a 3-hour diagnostic session designed to do one thing:
         <strong>give you the system that closes the gap between started and finished.</strong>
         Not motivation. Not inspiration. A system. Seats are limited and selective.
       </p>
       <a href="https://houseofmastery.co" class="btn-cta">
         Reserve Your Place &rarr;
       </a>
-      <p class="cta-meta">April 11, 2026 &middot; United Kenya Club, Nairobi</p>
-      <span class="cta-urgency">&#9679; Limited seats. Selected applicants only.</span>
+      <p class="cta-meta">KSh 2,500 &middot; April 11, 2026 &middot; United Kenya Club, Nairobi</p>
+      <span class="cta-urgency">&#9679; Waitlist now open. Limited seats.</span>
     </div>
 
     <!-- Share -->
@@ -733,19 +738,19 @@ nav {
         If this result was accurate, share it. You might be the reason someone finally interrupts their pattern.
       </p>
       <div class="share-buttons">
-        <a class="share-btn whatsapp" id="share-whatsapp" href="#" target="_blank" rel="noopener">
+        <a class="share-btn whatsapp" id="share-whatsapp-r" href="#" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
         </a>
-        <a class="share-btn facebook" id="share-facebook" href="#" target="_blank" rel="noopener">
+        <a class="share-btn facebook" id="share-facebook-r" href="#" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </a>
-        <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+        <a class="share-btn twitter" id="share-twitter-r" href="#" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X (Twitter)
         </a>
-        <a class="share-btn instagram" id="share-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">
+        <a class="share-btn instagram" id="share-instagram-r" href="https://www.instagram.com/" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           Instagram
         </a>
@@ -762,16 +767,16 @@ nav {
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 // ══════════════════════════════════════════════════════════════
-// CONFIGURATION — fill these in after EmailJS setup
+// CONFIGURATION
 // ══════════════════════════════════════════════════════════════
 const EMAILJS_PUBLIC_KEY  = 'FEEOw8NA0cwBM4Vum';
 const EMAILJS_SERVICE_ID  = 'service_76loif8';
 const EMAILJS_TEMPLATE_ID = 'template_3j2uhtd';
 
-const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScirZkER3gT8EjHfI2ez6AJnZ3sK2vD2RqWubpIrGBkb5K5Zg/formResponse';
-const FORM_ENTRY_NAME    = 'entry.1598770038';
-const FORM_ENTRY_EMAIL   = 'entry.366644017';
-const FORM_ENTRY_ARCHETYPE = 'entry.1468903536';
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdRrxDK8wXt4DImqKtlF1YZTXbNP4M0wvXvf-BFWLb8iFM54A/formResponse';
+const FORM_ENTRY_NAME    = 'entry.944937054';
+const FORM_ENTRY_EMAIL   = 'entry.1351114904';
+const FORM_ENTRY_ARCHETYPE = 'entry.1972209118';
 
 const ASSESSMENT_URL = 'https://houseofmastery.co/diagnostic';
 const SUMMIT_URL     = 'https://houseofmastery.co';
@@ -841,7 +846,7 @@ const ARCHETYPES = {
     maskKey: 'fear',
     color: '#9B4030',
     lie: '"I\'m almost ready."',
-    description: 'You have read the books. Attended the seminars. Completed the courses. You have a library of highlighted pages and saved podcasts. You have consumed more transformation than most people will ever encounter. Yet you have entered almost none of it. Learning creates the sensation of becoming without requiring you to actually change. It is the most socially acceptable form of avoidance. Robert Cialdini would call this "commitment without action." It is the illusion of progress that keeps you exactly where you are. But this hunger for knowledge is not wasted. It means you already possess every tool you need. The research phase is simply over.',
+    description: 'You have read the books. Attended the seminars. Completed the courses. You have a library of highlighted pages and saved podcasts. You know more about human behaviour, productivity, and personal transformation than most people you know. And you are still not doing the thing. Learning has become a substitute for living. Kennedy called this "the preparation trap." It is the most socially acceptable form of avoidance because it looks like growth. The truth is that you already know enough. You have known enough for a long time. The next book will not give you what action would.',
     pattern: 'You are perpetually in preparation. The transformation keeps being scheduled for next month. You confuse studying yourself with knowing yourself.',
     question: 'What do you already know that you have been refusing to apply?',
   },
@@ -948,7 +953,7 @@ function updateProgressBar(step, total) {
 }
 
 // ══════════════════════════════════════════════════════════════
-// GATE → UNLOCK (new first step)
+// GATE → UNLOCK
 // ══════════════════════════════════════════════════════════════
 function unlockAssessment() {
   const nameEl  = document.getElementById('gate-name');
@@ -982,10 +987,7 @@ function unlockAssessment() {
   userName  = nameEl.value.trim();
   userEmail = emailEl.value.trim();
 
-  // Submit to Google Form immediately on gate entry
   submitToGoogleFormPartial();
-
-  // Move to intro screen
   showScreen('screen-intro');
 }
 
@@ -1016,7 +1018,6 @@ function renderQuestion() {
   document.getElementById('q-text').textContent = q.text;
   document.getElementById('q-sub').textContent  = q.sub;
 
-  // Render scale
   const wrap = document.getElementById('scale-wrap');
   wrap.innerHTML = '';
   SCALE_LABELS.forEach((label, i) => {
@@ -1035,20 +1036,15 @@ function renderQuestion() {
     wrap.appendChild(opt);
   });
 
-  // Prev button
   const prevBtn = document.getElementById('btn-prev');
   prevBtn.disabled = currentQ === 0;
 
-  // Next button
   updateNextButton();
-
-  // Progress
   updateProgressBar(currentQ, total);
 }
 
 function selectAnswer(qId, val) {
   answers[qId] = val;
-  // Re-render scale to reflect selection
   const opts = document.querySelectorAll('.scale-option');
   opts.forEach((opt, i) => {
     const isSelected = (i + 1) === val;
@@ -1076,7 +1072,6 @@ function nextQuestion() {
     currentQ++;
     renderQuestion();
   } else {
-    // All done — compute result, send email, show confirmation
     computedResult = computeResult();
     document.getElementById('sending-overlay').classList.add('show');
     Promise.allSettled([
@@ -1084,7 +1079,6 @@ function nextQuestion() {
       sendEmailJS()
     ]).then(() => {
       document.getElementById('sending-overlay').classList.remove('show');
-      // Set share links before showing confirm screen
       const shareText = encodeURIComponent('I just took the Unfinished Life Diagnostic by House of Mastery. It was uncomfortably accurate. Take it here:');
       const shareUrl  = encodeURIComponent(ASSESSMENT_URL);
       document.getElementById('share-whatsapp').href  = 'https://wa.me/?text=' + shareText + '%20' + shareUrl;
@@ -1129,19 +1123,13 @@ function computeResult() {
   return { maskScores, domainScores, cellScores, primaryCell, secondaryCell, dominantMask, dominantDomain };
 }
 
-// ══════════════════════════════════════════════════════════════
-// LEGACY REVEAL (kept for compatibility — not used in new flow)
-// ══════════════════════════════════════════════════════════════
 function revealResult() {
-  // This function is no longer called in the new gated flow
-  // but is kept to avoid JS errors if referenced elsewhere
+  // Legacy — kept for compatibility
 }
 
 // ══════════════════════════════════════════════════════════════
 // GOOGLE FORM SUBMISSION
 // ══════════════════════════════════════════════════════════════
-
-// Step 1: Submit name + email immediately when gate is passed
 function submitToGoogleFormPartial() {
   const body = new URLSearchParams();
   body.append(FORM_ENTRY_NAME,  userName);
@@ -1156,7 +1144,6 @@ function submitToGoogleFormPartial() {
   }).catch(() => {});
 }
 
-// Step 2: Submit full result after assessment is complete
 function submitToGoogleFormFull() {
   const archetype = ARCHETYPES[computedResult.primaryCell];
   const body = new URLSearchParams();
@@ -1176,7 +1163,7 @@ function submitToGoogleFormFull() {
 // EMAILJS
 // ══════════════════════════════════════════════════════════════
 function sendEmailJS() {
-  if (EMAILJS_PUBLIC_KEY === 'YOUR_EMAILJS_PUBLIC_KEY') return Promise.resolve(); // Skip if not configured
+  if (EMAILJS_PUBLIC_KEY === 'YOUR_EMAILJS_PUBLIC_KEY') return Promise.resolve();
 
   const archetype = ARCHETYPES[computedResult.primaryCell];
   const secondary = computedResult.secondaryCell ? ARCHETYPES[computedResult.secondaryCell] : null;
@@ -1228,32 +1215,31 @@ function renderResult() {
   const archetype = ARCHETYPES[r.primaryCell];
   const secondary = r.secondaryCell ? ARCHETYPES[r.secondaryCell] : null;
 
-  // Header
   document.getElementById('r-name').textContent = archetype.name;
 
   const maskTag = document.getElementById('r-mask-tag');
   maskTag.textContent = archetype.mask + ' · ' + archetype.domain;
-  const maskColors = { fear: { bg:'rgba(155,64,48,0.15)', color:'#e07060', border:'rgba(155,64,48,0.35)' }, drift: { bg:'rgba(42,74,122,0.20)', color:'#7aA0d8', border:'rgba(42,74,122,0.40)' }, performance: { bg:'rgba(138,96,32,0.20)', color:'#d4a84a', border:'rgba(138,96,32,0.40)' } };
+  const maskColors = {
+    fear:        { bg:'rgba(155,64,48,0.08)',  color:'#9B4030', border:'rgba(155,64,48,0.22)' },
+    drift:       { bg:'rgba(42,74,122,0.08)',  color:'#2A4A7A', border:'rgba(42,74,122,0.22)' },
+    performance: { bg:'rgba(138,96,32,0.08)',  color:'#8A6020', border:'rgba(138,96,32,0.22)' }
+  };
   const mc = maskColors[archetype.maskKey];
   maskTag.style.background = mc.bg;
   maskTag.style.color = mc.color;
   maskTag.style.border = '1px solid ' + mc.border;
 
-  // Card
   const card = document.getElementById('r-card');
-  card.style.background = 'rgba(' + hexToRgb(archetype.color) + ',0.08)';
-  card.style.borderColor = 'rgba(' + hexToRgb(archetype.color) + ',0.30)';
+  card.style.borderColor = 'rgba(' + hexToRgb(archetype.color) + ',0.25)';
 
   document.getElementById('r-lie').textContent     = archetype.lie;
-  document.getElementById('r-lie').style.color     = archetype.color === '#9B4030' ? '#e07060' : archetype.color === '#2A4A7A' ? '#7aA0d8' : '#d4a84a';
+  document.getElementById('r-lie').style.color     = archetype.color;
   document.getElementById('r-desc').textContent    = archetype.description;
   document.getElementById('r-pattern').textContent = archetype.pattern;
   document.getElementById('r-question').textContent = archetype.question;
 
-  // Traffic light grid
   renderTrafficLight(r);
 
-  // Secondary
   const secCard = document.getElementById('secondary-card');
   if (secondary && secondary.name !== archetype.name) {
     document.getElementById('s-name').textContent = secondary.name + ' · ' + secondary.mask;
@@ -1263,14 +1249,12 @@ function renderResult() {
     secCard.style.display = 'none';
   }
 
-  // Share links
   const shareText = encodeURIComponent('I just took the Unfinished Life Diagnostic and discovered I am "' + archetype.name + '". If you have been starting things and not finishing them, take this. It is uncomfortably accurate.');
   const shareUrl  = encodeURIComponent(ASSESSMENT_URL);
 
-  document.getElementById('share-whatsapp').href  = 'https://wa.me/?text=' + shareText + '%20' + shareUrl;
-  document.getElementById('share-facebook').href  = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
-  document.getElementById('share-twitter').href   = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + shareUrl;
-  // Instagram doesn't support direct sharing links — opens Instagram home
+  document.getElementById('share-whatsapp-r').href  = 'https://wa.me/?text=' + shareText + '%20' + shareUrl;
+  document.getElementById('share-facebook-r').href  = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+  document.getElementById('share-twitter-r').href   = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + shareUrl;
 }
 
 function renderTrafficLight(r) {
@@ -1280,7 +1264,6 @@ function renderTrafficLight(r) {
   const maxMask   = Math.max(...Object.values(r.maskScores));
   const maxDomain = Math.max(...Object.values(r.domainScores));
 
-  // Masks
   const maskHeader = document.createElement('div');
   maskHeader.style.cssText = 'font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;margin-top:4px;';
   maskHeader.textContent = 'Pattern (Mask)';
@@ -1300,7 +1283,6 @@ function renderTrafficLight(r) {
     grid.appendChild(row);
   });
 
-  // Domains
   const domHeader = document.createElement('div');
   domHeader.style.cssText = 'font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;margin-top:20px;';
   domHeader.textContent = 'Life Area (Domain)';
@@ -1320,7 +1302,6 @@ function renderTrafficLight(r) {
     grid.appendChild(row);
   });
 
-  // Animate bars after a tick
   setTimeout(() => {
     document.querySelectorAll('.tl-bar-fill').forEach(el => {
       el.style.width = el.dataset.pct + '%';
