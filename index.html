@@ -10,26 +10,26 @@
 <meta property="og:url" content="https://houseofmastery.co/diagnostic"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --bg:          #faf6ed;
-  --bg-alt:      #f5f0e8;
+  --bg:          #F5F3EE;
+  --bg-alt:      #EDEAE3;
   --bg-white:    #ffffff;
-  --surface:     rgba(13,34,64,0.04);
-  --border:      rgba(13,34,64,0.10);
-  --border-mid:  rgba(13,34,64,0.16);
-  --text:        #0d2240;
-  --text-mid:    rgba(13,34,64,0.72);
-  --text-dim:    rgba(13,34,64,0.45);
-  --gold:        #c8a45a;
-  --gold-soft:   rgba(200,164,90,0.10);
-  --gold-border: rgba(200,164,90,0.30);
-  --navy:        #0d2240;
-  --navy-deep:   #07111f;
-  --ivory:       #faf6ed;
-  --ivory-warm:  #f5f0e8;
-  --display:     'Lora', Georgia, serif;
+  --surface:     rgba(28,28,28,0.04);
+  --border:      rgba(28,28,28,0.10);
+  --border-mid:  rgba(28,28,28,0.16);
+  --text:        #1C1C1C;
+  --text-mid:    rgba(28,28,28,0.72);
+  --text-dim:    rgba(28,28,28,0.45);
+  --gold:        #B8965A;
+  --gold-soft:   rgba(184,150,90,0.10);
+  --gold-border: rgba(184,150,90,0.30);
+  --navy:        #1C1C1C;
+  --navy-deep:   #111111;
+  --ivory:       #F5F3EE;
+  --ivory-warm:  #EDEAE3;
+  --display:     'Plus Jakarta Sans', system-ui, sans-serif;
   --sans:        'Inter', system-ui, sans-serif;
   --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
@@ -57,7 +57,7 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(250,246,237,0.94);
+  background: rgba(245,243,238,0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -65,7 +65,7 @@ nav {
   height: 60px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-brand { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); }
+.nav-brand { font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); }
 .nav-back { font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
 .nav-back:hover { opacity: 0.75; }
 
@@ -98,12 +98,12 @@ nav {
   margin-bottom: 32px; display: block;
 }
 .intro-h1 {
-  font-family: var(--display); font-size: clamp(36px, 7vw, 64px);
-  font-weight: 700; line-height: 1.06; letter-spacing: -0.02em;
+  font-family: var(--display); font-size: clamp(34px, 6.5vw, 60px); font-weight: 800;
+  line-height: 1.06; letter-spacing: -0.02em;
   color: var(--text); margin-bottom: 8px;
 }
-.intro-h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
-.brand-em { font-family: var(--display); font-style: italic; font-weight: 400; color: var(--gold); }
+.intro-h1 em { font-style: normal; font-weight: 800; color: var(--gold); }
+.brand-em { font-family: var(--display); font-style: normal; font-weight: 700; color: var(--gold); }
 .intro-sub {
   font-family: var(--sans); font-size: 13px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
@@ -238,7 +238,7 @@ nav {
   font-family: var(--display); font-size: clamp(26px, 4.5vw, 40px);
   font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 16px;
 }
-.gate-h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
+.gate-h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
 .gate-body {
   font-family: var(--sans); font-size: 16px; font-weight: 400;
   line-height: 1.80; color: var(--text-mid); margin-bottom: 40px;
@@ -269,7 +269,7 @@ nav {
   padding: 18px 40px; border-radius: 100px; border: none; cursor: pointer;
   transition: all 0.3s var(--ease); letter-spacing: 0.03em; width: 100%;
 }
-.btn-reveal:hover { background: #1a3355; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(13,34,64,0.18); }
+.btn-reveal:hover { background: #2D2D2D; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(28,28,28,0.18); }
 .gate-privacy {
   font-family: var(--sans); font-size: 12px; color: var(--text-dim);
   text-align: center; line-height: 1.60;
@@ -296,8 +296,8 @@ nav {
   border: 1px solid; background: var(--bg-white);
 }
 .result-lie {
-  font-family: var(--display); font-size: 18px; font-style: italic;
-  font-weight: 400; margin-bottom: 20px; line-height: 1.40;
+  font-family: var(--display); font-size: 18px; font-style: normal;
+  font-weight: 600; margin-bottom: 20px; line-height: 1.40;
 }
 .result-desc {
   font-family: var(--sans); font-size: 16px; font-weight: 400;
@@ -509,10 +509,10 @@ nav {
 
 <!-- NAV -->
 <nav>
-  <span class="nav-brand">House of Mastery</span>
-  <a href="https://houseofmastery.co" class="nav-back">
+  <a href="https://houseofmastery.co" class="nav-brand" style="text-decoration:none;">House of Mastery</a>
+  <a href="https://houseofmastery.co/diagnostic" class="nav-back">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M8.5 2.5L4 7l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to Summit
+    Back
   </a>
 </nav>
 
@@ -723,8 +723,8 @@ nav {
         <strong>give you the system that closes the gap between started and finished.</strong>
         Not motivation. Not inspiration. A system. Seats are limited and selective.
       </p>
-      <a href="https://houseofmastery.co" class="btn-cta">
-        Reserve Your Place &rarr;
+      <a href="https://houseofmastery.co/summit/" class="btn-cta">
+        Reserve Your Place at the Summit &rarr;
       </a>
       <p class="cta-meta">KSh 2,500 &middot; April 11, 2026 &middot; United Kenya Club, Nairobi</p>
       <span class="cta-urgency">&#9679; Waitlist now open. Limited seats.</span>
@@ -779,7 +779,7 @@ const FORM_ENTRY_EMAIL   = 'entry.1351114904';
 const FORM_ENTRY_ARCHETYPE = 'entry.1972209118';
 
 const ASSESSMENT_URL = 'https://houseofmastery.co/diagnostic';
-const SUMMIT_URL     = 'https://houseofmastery.co';
+const SUMMIT_URL     = 'https://houseofmastery.co/summit/';
 
 // ══════════════════════════════════════════════════════════════
 // QUESTIONS DATA
